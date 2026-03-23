@@ -1,65 +1,448 @@
-import Image from "next/image";
+import type { Metadata } from 'next'
+import ScrollReveal from '@/components/ScrollReveal'
+import WaitlistForm from '@/components/WaitlistForm'
+
+export const metadata: Metadata = {
+  title: 'Flip — Live Without Your Phone',
+  description:
+    'A complete analog system for modern life. Calls, notes, navigation, music — all replaced. Seven days. Everything you need.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Flip',
+  },
+}
+
+const problemPanels = [
+  {
+    line1: "You've tried screen time limits.",
+    line2: "They didn't work.",
+    counter: '01 / 03',
+  },
+  {
+    line1: 'Not because you lack willpower.',
+    line2: 'The phone is still there.',
+    counter: '02 / 03',
+  },
+  {
+    line1: 'Flip removes the phone.',
+    line2: 'And replaces everything.',
+    counter: '03 / 03',
+  },
+]
+
+const kitItems = [
+  { name: 'Flip Phone', desc: 'Calls and texts. Nothing else.' },
+  { name: 'Notebook', desc: 'Your thoughts, uninterrupted.' },
+  { name: 'Pen', desc: 'Slower. Clearer.' },
+  { name: 'Film Camera', desc: 'Capture moments, not content.' },
+  { name: 'Map Book', desc: 'Navigate without being navigated.' },
+  { name: 'Human Concierge', desc: 'For everything else.' },
+]
+
+const stats = [
+  { number: '7 days', label: 'The standard experiment' },
+  { number: '6 replacements', label: 'One for every smartphone function' },
+  { number: '0 apps', label: 'This is not software' },
+]
+
+const mono = 'var(--font-dm-mono)'
+const serif = 'var(--font-cormorant)'
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      {/* ─── SECTION 1: HERO ─── */}
+      <section
+        style={{
+          minHeight: '100vh',
+          background: '#1A1A18',
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {/* Eyebrow — top left */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '40px',
+            left: '40px',
+            fontFamily: mono,
+            fontSize: '10px',
+            letterSpacing: '0.2em',
+            textTransform: 'uppercase',
+            color: '#E8977A',
+          }}
+        >
+          The Flip System
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Center content */}
+        <ScrollReveal>
+          <div style={{ textAlign: 'center' }}>
+            {/* Headline */}
+            <div
+              className="hero-headline"
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '88px',
+                lineHeight: 1.0,
+                letterSpacing: '-0.03em',
+              }}
+            >
+              <div style={{ color: '#F5F0E8' }}>Your life.</div>
+              <div style={{ color: '#C4572A', fontStyle: 'italic' }}>Without</div>
+              <div style={{ color: '#F5F0E8' }}>the phone.</div>
+            </div>
+
+            {/* Subheadline */}
+            <p
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '20px',
+                color: 'rgba(245,240,232,0.6)',
+                maxWidth: '480px',
+                margin: '32px auto 0',
+                lineHeight: 1.5,
+              }}
+            >
+              A complete analog system for modern life. Seven days. Everything you need. Nothing you
+              don&apos;t.
+            </p>
+
+            {/* Buttons */}
+            <div
+              style={{
+                display: 'flex',
+                gap: '16px',
+                justifyContent: 'center',
+                marginTop: '40px',
+              }}
+            >
+              <button
+                className="hero-btn-primary"
+                style={{
+                  background: '#F5F0E8',
+                  color: '#1A1A18',
+                  fontFamily: mono,
+                  fontSize: '10px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  padding: '16px 32px',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                Begin the experiment
+              </button>
+              <button
+                style={{
+                  background: 'transparent',
+                  color: 'rgba(245,240,232,0.6)',
+                  fontFamily: mono,
+                  fontSize: '10px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  padding: '16px 32px',
+                  border: '1px solid rgba(245,240,232,0.25)',
+                  cursor: 'pointer',
+                }}
+              >
+                See what&apos;s in the kit
+              </button>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Scroll slowly — bottom right */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '40px',
+            right: '40px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            color: 'rgba(245,240,232,0.3)',
+            fontFamily: mono,
+            fontSize: '9px',
+            letterSpacing: '0.1em',
+          }}
+        >
+          <div style={{ width: '24px', height: '1px', background: 'rgba(245,240,232,0.3)' }} />
+          Scroll slowly
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      {/* ─── SECTION 2: THE PROBLEM (3 panels) ─── */}
+      {problemPanels.map((panel, i) => (
+        <section
+          key={i}
+          style={{
+            minHeight: '100vh',
+            background: '#F5F0E8',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'relative',
+          }}
+        >
+          <ScrollReveal>
+            <div style={{ textAlign: 'center', maxWidth: '600px', padding: '0 40px' }}>
+              <div
+                style={{
+                  fontFamily: serif,
+                  fontWeight: 300,
+                  fontSize: '40px',
+                  color: '#4A4A44',
+                  lineHeight: 1.3,
+                }}
+              >
+                {panel.line1}
+              </div>
+              <div
+                style={{
+                  fontFamily: serif,
+                  fontWeight: 300,
+                  fontSize: '40px',
+                  fontStyle: 'italic',
+                  color: '#C4572A',
+                  lineHeight: 1.3,
+                }}
+              >
+                {panel.line2}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Counter */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '40px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              fontFamily: mono,
+              fontSize: '9px',
+              color: '#9A9A90',
+              letterSpacing: '0.1em',
+            }}
+          >
+            {panel.counter}
+          </div>
+        </section>
+      ))}
+
+      {/* ─── SECTION 3: KIT PREVIEW ─── */}
+      <section style={{ background: '#F5F0E8', padding: '120px 40px' }}>
+        <ScrollReveal>
+          <div style={{ marginBottom: '64px' }}>
+            <div
+              style={{
+                fontFamily: mono,
+                fontSize: '10px',
+                textTransform: 'uppercase',
+                color: '#C4572A',
+                letterSpacing: '0.15em',
+                marginBottom: '16px',
+              }}
+            >
+              The Kit
+            </div>
+            <div
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '52px',
+                color: '#1A1A18',
+                letterSpacing: '-0.02em',
+                lineHeight: 1.1,
+              }}
+            >
+              Everything you need.
+            </div>
+            <div
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '52px',
+                fontStyle: 'italic',
+                color: '#C4572A',
+                letterSpacing: '-0.02em',
+                lineHeight: 1.1,
+              }}
+            >
+              Nothing you don&apos;t.
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Kit grid */}
+        <div
+          className="grid-3col"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '24px',
+          }}
+        >
+          {kitItems.map((item, i) => (
+            <ScrollReveal key={item.name} delay={i * 100}>
+              <div
+                className="kit-card"
+                style={{
+                  border: '1px solid rgba(26,26,24,0.1)',
+                  padding: '32px',
+                }}
+              >
+                {/* Image placeholder */}
+                <div
+                  style={{
+                    width: '100%',
+                    height: '160px',
+                    background: 'rgba(26,26,24,0.04)',
+                    marginBottom: '24px',
+                  }}
+                />
+                <div
+                  style={{
+                    fontFamily: serif,
+                    fontWeight: 300,
+                    fontSize: '20px',
+                    color: '#1A1A18',
+                  }}
+                >
+                  {item.name}
+                </div>
+                <div
+                  style={{
+                    fontFamily: mono,
+                    fontSize: '10px',
+                    color: '#9A9A90',
+                    marginTop: '8px',
+                  }}
+                >
+                  {item.desc}
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── SECTION 4: SOCIAL PROOF STRIP ─── */}
+      <section style={{ background: '#1A1A18', padding: '60px 40px' }}>
+        <ScrollReveal>
+          <div
+            className="stats-row"
+            style={{
+              display: 'flex',
+              alignItems: 'stretch',
+              justifyContent: 'center',
+            }}
+          >
+            {stats.map((stat, i) => (
+              <div key={stat.number} style={{ display: 'flex', alignItems: 'stretch' }}>
+                {i > 0 && (
+                  <div
+                    className="stats-divider"
+                    style={{
+                      width: '1px',
+                      background: 'rgba(255,255,255,0.1)',
+                      margin: '0 60px',
+                      alignSelf: 'stretch',
+                    }}
+                  />
+                )}
+                <div style={{ textAlign: 'center' }}>
+                  <div
+                    style={{
+                      fontFamily: serif,
+                      fontWeight: 300,
+                      fontStyle: 'italic',
+                      fontSize: '48px',
+                      color: '#E8977A',
+                      lineHeight: 1,
+                    }}
+                  >
+                    {stat.number}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: mono,
+                      fontSize: '9px',
+                      textTransform: 'uppercase',
+                      color: 'rgba(245,240,232,0.4)',
+                      marginTop: '8px',
+                      letterSpacing: '0.1em',
+                    }}
+                  >
+                    {stat.label}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* ─── SECTION 5: WAITLIST ─── */}
+      <section
+        style={{
+          background: '#F5F0E8',
+          padding: '120px 40px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <div style={{ maxWidth: '560px', width: '100%' }}>
+          <ScrollReveal>
+            <div
+              style={{
+                fontFamily: mono,
+                fontSize: '10px',
+                textTransform: 'uppercase',
+                color: '#C4572A',
+                letterSpacing: '0.15em',
+                marginBottom: '16px',
+              }}
+            >
+              Join the experiment
+            </div>
+            <div
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '48px',
+                color: '#1A1A18',
+                lineHeight: 1.1,
+              }}
+            >
+              Be among the first.
+            </div>
+            <p
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '18px',
+                color: '#4A4A44',
+                marginTop: '16px',
+                lineHeight: 1.7,
+              }}
+            >
+              Flip launches soon. Join the waitlist and we&apos;ll reach out when your kit is ready.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={150}>
+            <WaitlistForm />
+          </ScrollReveal>
+        </div>
+      </section>
+    </main>
+  )
 }
