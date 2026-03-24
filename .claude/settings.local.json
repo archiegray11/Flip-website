@@ -25,7 +25,8 @@
       "Bash(git remote:*)",
       "Bash(git push:*)",
       "Bash(brew install:*)",
-      "Bash(lsof -iTCP -sTCP:LISTEN -P)"
+      "Bash(lsof -iTCP -sTCP:LISTEN -P)",
+      "Bash(vercel whoami:*)"
     ]
   }
 }
