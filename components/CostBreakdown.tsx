@@ -13,9 +13,8 @@ const items = [
   { name: 'Alarm clock', price: 9, color: '#D4B896' },
   { name: 'Map book', price: 6, color: '#9A9A90' },
   { name: 'Sheets (printed)', price: 4, color: '#8C9E7E' },
-  { name: 'Packaging', price: 5, color: '#6E5A4A' },
-  { name: 'Shipping', price: 5, color: '#B8A090' },
-  { name: 'SIM card', price: 2, color: '#4A6A5A' },
+  { name: 'Packaging', price: 7, color: '#6E5A4A' },
+  { name: 'Shipping', price: 5, color: '#F2CDB8' },
   { name: 'Platform / admin', price: 5, color: '#C49A7A' },
   { name: 'Reinvestment', price: 16, color: '#1A1A18' },
 ]

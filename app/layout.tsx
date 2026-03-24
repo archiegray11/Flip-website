@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Cormorant_Garamond, DM_Mono } from 'next/font/google'
 import './globals.css'
 import SiteNav from '@/components/SiteNav'
+import SiteFooter from '@/components/SiteFooter'
 
 const cormorant = Cormorant_Garamond({
   variable: '--font-cormorant',
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body>
         <SiteNav />
         {children}
+        <SiteFooter />
       </body>
     </html>
   )

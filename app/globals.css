@@ -25,6 +25,45 @@ body {
   color: #1A1A18;
 }
 
+/* Navigation */
+.nav-subtle-link:hover { color: #1A1A18 !important; }
+.nav-begin-cta:hover   { text-decoration: underline; }
+.nav-menu-btn:hover    { color: #1A1A18 !important; }
+.nav-close-btn:hover   { color: #F5F0E8 !important; }
+.menu-overlay-link     { transition: color 150ms ease; }
+.menu-overlay-link:hover { color: #C4572A !important; }
+.nav-social-link:hover { color: rgba(245,240,232,0.6) !important; }
+.footer-link:hover     { color: rgba(245,240,232,0.6) !important; }
+
+@keyframes menuContentIn {
+  from { transform: translateY(-20px); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes menuLinkIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Honest bit cards */
+.honest-card {
+  transition: border-color 200ms ease;
+}
+.honest-card:hover {
+  border-color: rgba(26,26,24,0.15) !important;
+}
+.honest-contact-email:hover {
+  text-decoration: underline;
+}
+
+/* Begin page — single product CTA */
+.begin-btn {
+  transition: background 200ms ease;
+}
+.begin-btn:hover {
+  background: #C4572A !important;
+}
+
 /* Hero buttons */
 .hero-btn-primary {
   transition: background 200ms ease, color 200ms ease;
@@ -120,12 +159,90 @@ body {
   color: #C4572A !important;
 }
 
-/* Homepage community teaser link */
-.teaser-link {
-  transition: color 200ms ease;
+/* About page / founder story link */
+.founder-story-link {
+  transition: text-decoration 150ms ease;
 }
-.teaser-link:hover {
+.founder-story-link:hover {
+  text-decoration: underline !important;
+}
+
+
+/* Scroll chevron snap label */
+@keyframes snapPop {
+  0%   { opacity: 0; transform: rotate(28deg) scale(0.3); }
+  60%  { opacity: 1; transform: rotate(28deg) scale(1.2); }
+  100% { opacity: 1; transform: rotate(28deg) scale(1); }
+}
+
+/* Community teaser pulse button */
+@keyframes teaserGlow {
+  0%, 100% { opacity: 0; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes teaserPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.03); }
+}
+
+.teaser-pulse-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.teaser-pulse-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: #C4572A;
+  opacity: 0;
+  z-index: -1;
+  animation: teaserGlow 2s ease-in-out infinite;
+}
+
+.teaser-pulse-btn {
+  position: relative;
+  display: inline-block;
+  background: #C4572A;
+  color: #F5F0E8;
+  font-family: var(--font-dm-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 18px 40px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  animation: teaserPulse 2s ease-in-out infinite;
+  transition: background 150ms ease;
+}
+
+.teaser-pulse-wrapper:hover::before {
+  animation: none;
+  opacity: 0;
+}
+
+.teaser-pulse-btn:hover {
+  background: #A34520;
+  animation: none;
+  transform: scale(1.03);
+}
+
+/* Community hero login */
+.community-login-input::placeholder {
+  color: rgba(245,240,232,0.2);
+}
+.community-login-btn:hover {
+  color: #F5F0E8 !important;
+}
+.community-login-join:hover {
   color: #C4572A !important;
+}
+
+/* Gatherings record cards */
+.gathering-card:hover {
+  border-color: rgba(26,26,24,0.25) !important;
 }
 
 /* Community form inputs */
@@ -170,7 +287,6 @@ body {
 @media (max-width: 768px) {
   /* Navigation */
   .nav-desktop { display: none !important; }
-  .nav-hamburger { display: flex !important; flex-direction: column; justify-content: center; }
 
   /* Hero */
   .hero-headline { font-size: 48px !important; }
@@ -183,8 +299,12 @@ body {
   .community-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
   .community-headline { font-size: 52px !important; }
   .community-steps { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .gatherings-record-grid { grid-template-columns: 1fr !important; }
   .gatherings-grid { grid-template-columns: 1fr !important; gap: 60px !important; }
   .community-teaser-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .founder-grid { flex-direction: column-reverse !important; gap: 40px !important; }
+  .about-story-grid { flex-direction: column !important; }
+  .about-story-grid > div:last-child { padding-left: 0 !important; margin-top: 40px; }
 
   /* Stats strip */
   .stats-row { flex-direction: column !important; align-items: center !important; gap: 40px !important; }

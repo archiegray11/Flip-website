@@ -64,11 +64,11 @@ const panels = [
   },
   {
     number: '08 / 08',
-    name: 'Human Concierge',
-    tagline: 'A real person. For everything else.',
+    name: 'The System',
+    tagline: 'Everything else that makes it work.',
     philosophy:
-      "The most important part of the system. When you genuinely can't function without your smartphone — directions to somewhere obscure, a booking that needs to be made right now, a piece of information only the internet has — you message the concierge. They handle it. You stay present.",
-    replaces: 'Search · Bookings · Navigation edge-cases',
+      "The alarm clock keeps the phone out of the bedroom. The Flip Browser keeps the laptop honest. The Flip Papers give each day something to open. The community means you're not doing it alone. None of these are the point. All of them are the point.",
+    replaces: 'Alarm clock · Flip Browser · The Flip Papers · The Community',
   },
 ]
 
@@ -171,7 +171,7 @@ export default function KitScroller() {
                 flexShrink: 0,
                 width: '100vw',
                 scrollSnapAlign: 'start',
-                padding: '80px 40px',
+                padding: '80px 40px 80px 80px',
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr',
                 alignItems: 'center',

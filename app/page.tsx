@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
-import WaitlistForm from '@/components/WaitlistForm'
 import CostBreakdown from '@/components/CostBreakdown'
+import HeroScrollIndicator from '@/components/HeroScrollIndicator'
+import StayInTouch from '@/components/StayInTouch'
 
 export const metadata: Metadata = {
   title: 'Flip — Live Without Your Phone',
@@ -32,13 +33,13 @@ const problemPanels = [
   },
 ]
 
-const kitItems = [
+const kitItems: { name: string; desc: string | null }[] = [
   { name: 'Flip Phone', desc: 'Calls and texts. Nothing else.' },
   { name: 'Notebook', desc: 'Your thoughts, uninterrupted.' },
   { name: 'Pen', desc: 'Slower. Clearer.' },
   { name: 'Film Camera', desc: 'Capture moments, not content.' },
   { name: 'Map Book', desc: 'Navigate without being navigated.' },
-  { name: 'Human Concierge', desc: 'For everything else.' },
+  { name: 'The System', desc: null },
 ]
 
 const stats = [
@@ -56,12 +57,14 @@ export default function Home() {
       {/* ─── SECTION 1: HERO ─── */}
       <section
         style={{
-          minHeight: '100vh',
+          height: 'calc(100vh - 60px)',
+          maxHeight: 'calc(100vh - 60px)',
           background: '#1A1A18',
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          overflow: 'hidden',
         }}
       >
         {/* Eyebrow — top left */}
@@ -159,24 +162,7 @@ export default function Home() {
           </div>
         </ScrollReveal>
 
-        {/* Scroll slowly — bottom right */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '40px',
-            right: '40px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px',
-            color: 'rgba(245,240,232,0.3)',
-            fontFamily: mono,
-            fontSize: '9px',
-            letterSpacing: '0.1em',
-          }}
-        >
-          <div style={{ width: '24px', height: '1px', background: 'rgba(245,240,232,0.3)' }} />
-          Scroll slowly
-        </div>
+        <HeroScrollIndicator />
       </section>
 
       {/* ─── SECTION 2: THE PROBLEM (3 panels) ─── */}
@@ -238,8 +224,40 @@ export default function Home() {
         </section>
       ))}
 
+      {/* ─── TESS QUOTE ─── */}
+      <section style={{ background: '#F5F0E8', padding: '60px 40px', textAlign: 'center', borderTop: '1px solid rgba(26,26,24,0.08)' }}>
+        <ScrollReveal>
+          <div
+            style={{
+              fontFamily: serif,
+              fontWeight: 300,
+              fontStyle: 'italic',
+              fontSize: '36px',
+              color: '#1A1A18',
+              maxWidth: '600px',
+              margin: '0 auto',
+              lineHeight: 1.4,
+            }}
+          >
+            &ldquo;My world feels smaller, but in a good way.&rdquo;
+          </div>
+          <div
+            style={{
+              fontFamily: serif,
+              fontWeight: 300,
+              fontStyle: 'italic',
+              fontSize: '15px',
+              color: '#9A9A90',
+              marginTop: '16px',
+            }}
+          >
+            <span style={{ color: '#C4572A' }}>Tess</span>, Performance Artist — 2025
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* ─── SECTION 3: KIT PREVIEW ─── */}
-      <section style={{ background: '#F5F0E8', padding: '120px 40px' }}>
+      <section style={{ background: '#F5F0E8', padding: '120px 40px', borderTop: '1px solid rgba(26,26,24,0.08)' }}>
         <ScrollReveal>
           <div style={{ marginBottom: '64px' }}>
             <div
@@ -289,45 +307,87 @@ export default function Home() {
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
             gap: '24px',
+            alignItems: 'stretch',
           }}
         >
           {kitItems.map((item, i) => (
-            <ScrollReveal key={item.name} delay={i * 100}>
+            <ScrollReveal key={item.name} delay={i * 100} style={{ height: '100%' }}>
               <div
                 className="kit-card"
                 style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
                   border: '1px solid rgba(26,26,24,0.1)',
-                  padding: '32px',
                 }}
               >
                 {/* Image placeholder */}
                 <div
                   style={{
+                    flexShrink: 0,
                     width: '100%',
                     height: '160px',
                     background: 'rgba(26,26,24,0.04)',
-                    marginBottom: '24px',
                   }}
                 />
+                {/* Content */}
                 <div
                   style={{
-                    fontFamily: serif,
-                    fontWeight: 300,
-                    fontSize: '20px',
-                    color: '#1A1A18',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    flex: 1,
+                    padding: '24px',
                   }}
                 >
-                  {item.name}
-                </div>
-                <div
-                  style={{
-                    fontFamily: mono,
-                    fontSize: '10px',
-                    color: '#9A9A90',
-                    marginTop: '8px',
-                  }}
-                >
-                  {item.desc}
+                  <div
+                    style={{
+                      fontFamily: serif,
+                      fontWeight: 300,
+                      fontSize: '20px',
+                      color: '#1A1A18',
+                    }}
+                  >
+                    {item.name}
+                  </div>
+                  {item.desc ? (
+                    <div
+                      style={{
+                        fontFamily: mono,
+                        fontSize: '10px',
+                        color: '#9A9A90',
+                        marginTop: '8px',
+                      }}
+                    >
+                      {item.desc}
+                    </div>
+                  ) : (
+                    <>
+                      <div
+                        style={{
+                          fontFamily: mono,
+                          fontSize: '9px',
+                          color: '#9A9A90',
+                          marginTop: '8px',
+                        }}
+                      >
+                        Alarm clock · Flip Browser · The Flip Papers · The Community
+                      </div>
+                      <div
+                        style={{
+                          fontFamily: serif,
+                          fontWeight: 300,
+                          fontStyle: 'italic',
+                          fontSize: '15px',
+                          color: '#9A9A90',
+                          lineHeight: 1.7,
+                          marginTop: '12px',
+                        }}
+                      >
+                        The things that make seven days without a phone not just possible — but worth
+                        doing.
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             </ScrollReveal>
@@ -375,6 +435,68 @@ export default function Home() {
           </ScrollReveal>
           <CostBreakdown />
         </div>
+      </section>
+
+      {/* ─── FOUNDER MOMENT ─── */}
+      <section style={{ background: '#F5F0E8', padding: '80px 40px', borderTop: '1px solid rgba(26,26,24,0.08)' }}>
+        <ScrollReveal>
+          <div style={{ maxWidth: '640px', margin: '0 auto' }}>
+            <div
+              style={{
+                fontFamily: mono,
+                fontSize: '10px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.15em',
+                color: '#C4572A',
+                marginBottom: '24px',
+              }}
+            >
+              Why Flip exists
+            </div>
+            <blockquote
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontStyle: 'italic',
+                fontSize: '28px',
+                color: '#1A1A18',
+                lineHeight: 1.5,
+                margin: 0,
+              }}
+            >
+              &ldquo;In 2021 my phone smashed abroad. I went without for a month. I felt the best I
+              had in a long time. Flip is my attempt to give other people that same feeling.&rdquo;
+            </blockquote>
+            <div
+              style={{
+                fontFamily: mono,
+                fontSize: '9px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                color: '#9A9A90',
+                marginTop: '16px',
+              }}
+            >
+              Archie, founder
+            </div>
+            <Link
+              href="/about"
+              className="founder-story-link"
+              style={{
+                display: 'block',
+                fontFamily: serif,
+                fontWeight: 300,
+                fontStyle: 'italic',
+                fontSize: '17px',
+                color: '#C4572A',
+                textDecoration: 'none',
+                marginTop: '16px',
+              }}
+            >
+              Read the full story →
+            </Link>
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* ─── COMMUNITY TEASER ─── */}
@@ -426,25 +548,18 @@ export default function Home() {
                   fontSize: '17px',
                   color: '#4A4A44',
                   lineHeight: 1.8,
-                  margin: '0 0 20px',
+                  margin: '0 0 32px',
                 }}
               >
                 Twice a year, alumni gather in person. You&apos;ll find out about it by post.
               </p>
-              <Link
-                href="/community"
-                className="teaser-link"
-                style={{
-                  fontFamily: mono,
-                  fontSize: '10px',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.12em',
-                  color: '#1A1A18',
-                  textDecoration: 'none',
-                }}
-              >
-                Learn more →
-              </Link>
+
+              {/* Pulse button */}
+              <div className="teaser-pulse-wrapper">
+                <Link href="/community" className="teaser-pulse-btn">
+                  Learn more →
+                </Link>
+              </div>
             </div>
           </div>
         </ScrollReveal>
@@ -506,7 +621,7 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* ─── SECTION 5: WAITLIST ─── */}
+      {/* ─── SECTION 5: CTA ─── */}
       <section
         style={{
           background: '#F5F0E8',
@@ -517,7 +632,7 @@ export default function Home() {
           borderTop: '1px solid rgba(26,26,24,0.08)',
         }}
       >
-        <div style={{ maxWidth: '560px', width: '100%' }}>
+        <div style={{ maxWidth: '640px', width: '100%', textAlign: 'center' }}>
           <ScrollReveal>
             <div
               style={{
@@ -526,10 +641,10 @@ export default function Home() {
                 textTransform: 'uppercase',
                 color: '#C4572A',
                 letterSpacing: '0.15em',
-                marginBottom: '12px',
+                marginBottom: '16px',
               }}
             >
-              Join the experiment
+              Ready?
             </div>
             <div
               style={{
@@ -540,24 +655,66 @@ export default function Home() {
                 lineHeight: 1.1,
               }}
             >
-              Be among the first.
+              Begin your seven days.
             </div>
-            <p
+            <div
               style={{
                 fontFamily: serif,
                 fontWeight: 300,
-                fontSize: '18px',
+                fontStyle: 'italic',
+                fontSize: '20px',
                 color: '#4A4A44',
-                marginTop: '16px',
-                lineHeight: 1.7,
+                marginTop: '8px',
               }}
             >
-              Flip launches soon. Join the waitlist and we&apos;ll reach out when your kit is ready.
-            </p>
-          </ScrollReveal>
+              The kit ships within two working days.
+            </div>
 
-          <ScrollReveal delay={150}>
-            <WaitlistForm />
+            {/* Two columns */}
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '48px',
+                marginTop: '48px',
+              }}
+            >
+              {/* Left — Begin */}
+              <div style={{ textAlign: 'center' }}>
+                <div
+                  style={{
+                    fontFamily: mono,
+                    fontSize: '9px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    color: '#9A9A90',
+                    marginBottom: '12px',
+                  }}
+                >
+                  Ready to go
+                </div>
+                <div className="teaser-pulse-wrapper">
+                  <Link href="/begin" className="teaser-pulse-btn">
+                    Begin the experiment
+                  </Link>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div
+                style={{
+                  width: '1px',
+                  height: '60px',
+                  background: 'rgba(26,26,24,0.08)',
+                  alignSelf: 'center',
+                  flexShrink: 0,
+                }}
+              />
+
+              {/* Right — Stay in touch */}
+              <StayInTouch />
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -571,7 +728,7 @@ export default function Home() {
           borderTop: '1px solid rgba(26,26,24,0.1)',
         }}
       >
-        <div style={{ maxWidth: '640px', width: '100%' }}>
+        <div style={{ maxWidth: '640px', width: '100%', textAlign: 'center' }}>
           <div
             style={{
               fontFamily: mono,
@@ -594,9 +751,8 @@ export default function Home() {
               margin: 0,
             }}
           >
-            The £16 profit per kit doesn&apos;t go to me. It goes back into Flip — better sheets,
-            better sourcing, building the community meetups, eventually the person helping run this
-            when I&apos;m not around. This is a business built to last, not to extract.
+            The £16 profit per kit goes right back into Flip: better sheets,
+            better sourcing, building the community meetups. A business built to last, not to extract.
           </p>
         </div>
       </section>

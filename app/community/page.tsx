@@ -3,6 +3,8 @@ import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import CommunityForm from '@/components/CommunityForm'
 import InvitationCard from '@/components/InvitationCard'
+import CommunityLogin from '@/components/CommunityLogin'
+import GatheringCard from '@/components/GatheringCard'
 
 export const metadata: Metadata = {
   title: 'Community — Flip',
@@ -122,8 +124,134 @@ export default function CommunityPage() {
               No group chat. No newsletter. No algorithm deciding what you see. When something is
               happening, a letter arrives at your door. That&apos;s how you&apos;ll know.
             </p>
+
+            <CommunityLogin />
           </div>
         </ScrollReveal>
+      </section>
+
+      {/* ─── GATHERINGS RECORD ─── */}
+      <section
+        style={{
+          background: '#F5F0E8',
+          padding: '100px 40px',
+          borderBottom: '1px solid rgba(26,26,24,0.08)',
+        }}
+      >
+        {/* Intro */}
+        <ScrollReveal>
+          <div
+            style={{
+              fontFamily: mono,
+              fontSize: '10px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.2em',
+              color: '#C4572A',
+              marginBottom: '48px',
+            }}
+          >
+            The gatherings so far
+          </div>
+
+          <div
+            style={{
+              fontFamily: serif,
+              fontWeight: 300,
+              fontSize: '52px',
+              color: '#1A1A18',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.05,
+            }}
+          >
+            We&apos;ve been meeting.
+          </div>
+          <div
+            style={{
+              fontFamily: serif,
+              fontWeight: 300,
+              fontStyle: 'italic',
+              fontSize: '52px',
+              color: '#C4572A',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.05,
+              marginTop: '8px',
+            }}
+          >
+            Since the beginning.
+          </div>
+
+          <p
+            style={{
+              fontFamily: serif,
+              fontWeight: 300,
+              fontSize: '18px',
+              color: '#4A4A44',
+              maxWidth: '560px',
+              lineHeight: 1.8,
+              marginTop: '32px',
+            }}
+          >
+            Before the website. Before the kit was finished. Before most people knew what Flip was.
+            We started gathering anyway. These are the ones that happened.
+          </p>
+        </ScrollReveal>
+
+        {/* Event cards */}
+        <div
+          className="gatherings-record-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '24px',
+            marginTop: '64px',
+          }}
+        >
+          <ScrollReveal delay={0}>
+            <GatheringCard
+              number="001"
+              label="Gathering 001"
+              title="Drinks in Marylebone"
+              location="A pub. Good light. Better conversation."
+              note="The first one. We didn't know who would come or what it would be. It turned out to be exactly what it needed to be."
+              year="2025"
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={150}>
+            <GatheringCard
+              number="002"
+              label="Gathering 002"
+              title="Brunch in Kensington"
+              location="A table for the morning. Nowhere to be."
+              note="Mornings have a different quality. People talk differently over eggs than they do over drinks. We learned that."
+              year="2025"
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={300}>
+            <GatheringCard
+              number="003"
+              label="Gathering 003"
+              title="An Evening, Revisited"
+              location="Marylebone, again. Some things bear repeating."
+              note="The third gathering felt easier than the first. Something had settled. The room had a familiarity to it that hadn't existed before."
+              year="2025"
+            />
+          </ScrollReveal>
+        </div>
+
+        {/* Closing line */}
+        <div
+          style={{
+            textAlign: 'center',
+            marginTop: '60px',
+            fontFamily: serif,
+            fontWeight: 300,
+            fontStyle: 'italic',
+            fontSize: '28px',
+            color: 'rgba(26,26,24,0.35)',
+          }}
+        >
+          The next one will find you by post.
+        </div>
       </section>
 
       {/* ─── SECTION 2: HOW IT WORKS ─── */}

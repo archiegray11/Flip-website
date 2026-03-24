@@ -6,19 +6,31 @@ import Link from 'next/link'
 const mono = 'var(--font-dm-mono)'
 const serif = 'var(--font-cormorant)'
 
-const navLinks = [
-  { label: 'The System', href: '/the-system' },
+const menuLinks = [
+  { label: 'The Kit', href: '/the-system' },
   { label: 'The Experience', href: '/the-experience' },
   { label: 'Stories', href: '/stories' },
   { label: 'Community', href: '/community' },
   { label: 'For Organisations', href: '/for-organisations' },
+  { label: 'About', href: '/about' },
 ]
 
 export default function SiteNav() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [animKey, setAnimKey] = useState(0)
+
+  function openMenu() {
+    setMenuOpen(true)
+    setAnimKey((k) => k + 1)
+  }
+
+  function closeMenu() {
+    setMenuOpen(false)
+  }
 
   return (
     <>
+      {/* ── Main bar ── */}
       <nav
         style={{
           position: 'sticky',
@@ -34,161 +46,268 @@ export default function SiteNav() {
           justifyContent: 'space-between',
         }}
       >
-        {/* Left: Flip logo */}
+        {/* Logo */}
         <Link
           href="/"
           style={{
             fontFamily: serif,
             fontWeight: 300,
-            fontSize: '20px',
-            color: '#1A1A18',
+            fontStyle: 'italic',
+            fontSize: '22px',
+            color: '#C4572A',
             textDecoration: 'none',
-            letterSpacing: '-0.01em',
           }}
         >
           Flip
         </Link>
 
-        {/* Right: Desktop nav links */}
+        {/* Right cluster */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          {/* Desktop-only links */}
+          <Link
+            href="/the-system"
+            className="nav-desktop nav-subtle-link"
+            style={{
+              fontFamily: mono,
+              fontSize: '9px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: '#9A9A90',
+              textDecoration: 'none',
+            }}
+          >
+            The Kit
+          </Link>
+          <Link
+            href="/stories"
+            className="nav-desktop nav-subtle-link"
+            style={{
+              fontFamily: mono,
+              fontSize: '9px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: '#9A9A90',
+              textDecoration: 'none',
+            }}
+          >
+            Stories
+          </Link>
+          <div
+            className="nav-desktop"
+            style={{
+              width: '1px',
+              height: '14px',
+              background: 'rgba(26,26,24,0.15)',
+              flexShrink: 0,
+            }}
+          />
+
+          {/* Begin CTA — always visible */}
+          <Link
+            href="/begin"
+            className="nav-begin-cta"
+            style={{
+              fontFamily: mono,
+              fontSize: '9px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: '#C4572A',
+              textDecoration: 'none',
+            }}
+          >
+            Begin
+          </Link>
+
+          {/* Menu trigger */}
+          <button
+            onClick={openMenu}
+            className="nav-menu-btn"
+            aria-label="Open menu"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              padding: 0,
+              fontFamily: mono,
+              fontSize: '9px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: '#9A9A90',
+            }}
+          >
+            Menu
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '4px',
+                width: '14px',
+              }}
+            >
+              <span
+                style={{
+                  display: 'block',
+                  width: '14px',
+                  height: '1px',
+                  background: '#1A1A18',
+                  transition: 'transform 200ms ease',
+                  transform: menuOpen ? 'translateY(2.5px) rotate(45deg)' : 'none',
+                }}
+              />
+              <span
+                style={{
+                  display: 'block',
+                  width: '14px',
+                  height: '1px',
+                  background: '#1A1A18',
+                  transition: 'transform 200ms ease',
+                  transform: menuOpen ? 'translateY(-2.5px) rotate(-45deg)' : 'none',
+                }}
+              />
+            </div>
+          </button>
+        </div>
+      </nav>
+
+      {/* ── Full-screen overlay ── */}
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          background: '#1A1A18',
+          zIndex: 100,
+          opacity: menuOpen ? 1 : 0,
+          pointerEvents: menuOpen ? 'all' : 'none',
+          transition: 'opacity 300ms ease',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        {/* Close */}
         <div
-          className="nav-desktop"
           style={{
             display: 'flex',
+            justifyContent: 'flex-end',
+            padding: '20px 40px',
+            height: '60px',
             alignItems: 'center',
-            gap: '32px',
           }}
         >
-          {navLinks.map((link) => (
+          <button
+            onClick={closeMenu}
+            className="nav-close-btn"
+            style={{
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              fontFamily: mono,
+              fontSize: '9px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: 'rgba(245,240,232,0.4)',
+              padding: 0,
+            }}
+          >
+            Close
+          </button>
+        </div>
+
+        {/* Links */}
+        <div
+          key={animKey}
+          style={{
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '32px',
+            animation: menuOpen ? 'menuContentIn 300ms ease forwards' : 'none',
+          }}
+        >
+          {menuLinks.map((link, i) => (
             <Link
               key={link.href}
               href={link.href}
+              onClick={closeMenu}
+              className="menu-overlay-link"
               style={{
-                fontFamily: mono,
-                fontSize: '10px',
-                textTransform: 'uppercase',
-                color: '#1A1A18',
+                fontFamily: serif,
+                fontWeight: 300,
+                fontStyle: 'italic',
+                fontSize: '52px',
+                color: '#F5F0E8',
                 textDecoration: 'none',
-                letterSpacing: '0.1em',
+                opacity: 0,
+                animation: menuOpen
+                  ? `menuLinkIn 400ms ease forwards ${i * 60}ms`
+                  : 'none',
               }}
             >
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/begin"
-            style={{
-              fontFamily: mono,
-              fontSize: '10px',
-              textTransform: 'uppercase',
-              color: '#C4572A',
-              textDecoration: 'none',
-              letterSpacing: '0.1em',
-            }}
-          >
-            Begin
-          </Link>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="nav-hamburger"
-          onClick={() => setMenuOpen(true)}
-          style={{
-            display: 'none',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            gap: '6px',
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            padding: '4px',
-          }}
-          aria-label="Open menu"
-        >
-          <span style={{ display: 'block', width: '24px', height: '1px', background: '#1A1A18' }} />
-          <span style={{ display: 'block', width: '24px', height: '1px', background: '#1A1A18' }} />
-          <span style={{ display: 'block', width: '24px', height: '1px', background: '#1A1A18' }} />
-        </button>
-      </nav>
-
-      {/* Full-screen mobile overlay */}
-      {menuOpen && (
+        {/* Bottom links */}
         <div
           style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: '#F5F0E8',
-            zIndex: 100,
-            padding: '40px',
             display: 'flex',
-            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '32px',
+            padding: '32px 40px',
           }}
         >
-          {/* Close button */}
-          <button
-            onClick={() => setMenuOpen(false)}
+          <a
+            href="#"
+            className="nav-social-link"
             style={{
-              alignSelf: 'flex-end',
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
               fontFamily: mono,
-              fontSize: '10px',
+              fontSize: '9px',
               textTransform: 'uppercase',
-              color: '#9A9A90',
-              letterSpacing: '0.1em',
+              letterSpacing: '0.15em',
+              color: 'rgba(245,240,232,0.3)',
+              textDecoration: 'none',
             }}
-            aria-label="Close menu"
           >
-            Close
-          </button>
-
-          {/* Mobile nav links */}
-          <div
+            Instagram
+          </a>
+          <a
+            href="#"
+            className="nav-social-link"
             style={{
-              flex: 1,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '8px',
+              fontFamily: mono,
+              fontSize: '9px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: 'rgba(245,240,232,0.3)',
+              textDecoration: 'none',
             }}
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                style={{
-                  fontFamily: serif,
-                  fontWeight: 300,
-                  fontSize: '48px',
-                  color: '#1A1A18',
-                  textDecoration: 'none',
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/begin"
-              onClick={() => setMenuOpen(false)}
-              style={{
-                fontFamily: serif,
-                fontWeight: 300,
-                fontSize: '48px',
-                color: '#C4572A',
-                textDecoration: 'none',
-              }}
-            >
-              Begin
-            </Link>
-          </div>
+            TikTok
+          </a>
+          <div style={{ width: '1px', height: '12px', background: 'rgba(245,240,232,0.1)' }} />
+          <Link
+            href="/begin#honest-bit"
+            onClick={closeMenu}
+            className="nav-social-link"
+            style={{
+              fontFamily: mono,
+              fontSize: '9px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: 'rgba(245,240,232,0.3)',
+              textDecoration: 'none',
+            }}
+          >
+            FAQ
+          </Link>
         </div>
-      )}
+      </div>
     </>
   )
 }
