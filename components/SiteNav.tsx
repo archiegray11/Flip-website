@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'The System', href: '/the-system' },
   { label: 'The Experience', href: '/the-experience' },
   { label: 'Stories', href: '/stories' },
+  { label: 'Community', href: '/community' },
   { label: 'For Organisations', href: '/for-organisations' },
 ]
 

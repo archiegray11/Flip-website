@@ -120,6 +120,52 @@ body {
   color: #C4572A !important;
 }
 
+/* Homepage community teaser link */
+.teaser-link {
+  transition: color 200ms ease;
+}
+.teaser-link:hover {
+  color: #C4572A !important;
+}
+
+/* Community form inputs */
+.community-form-input:focus {
+  border-bottom-color: #C4572A !important;
+}
+.community-form-input::placeholder {
+  color: #9A9A90;
+}
+
+/* Community submit button */
+.community-submit-btn:hover {
+  background: #C4572A !important;
+}
+
+/* Community philosophy CTA */
+.philosophy-cta {
+  transition: border-color 200ms ease, color 200ms ease;
+}
+.philosophy-cta:hover {
+  border-color: #C4572A !important;
+  color: #C4572A !important;
+}
+
+/* Community section links */
+.community-btn-primary {
+  transition: background 200ms ease, color 200ms ease;
+}
+.community-btn-primary:hover {
+  background: #C4572A !important;
+  color: #F5F0E8 !important;
+}
+.community-btn-ghost {
+  transition: color 200ms ease, border-color 200ms ease;
+}
+.community-btn-ghost:hover {
+  color: #F5F0E8 !important;
+  border-color: rgba(245,240,232,0.6) !important;
+}
+
 /* ── Mobile Responsive ──────────────────────────────── */
 @media (max-width: 768px) {
   /* Navigation */
@@ -132,6 +178,13 @@ body {
   /* Grids → single column */
   .grid-3col { grid-template-columns: 1fr !important; }
   .grid-2col { grid-template-columns: 1fr !important; }
+
+  /* Community grid */
+  .community-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .community-headline { font-size: 52px !important; }
+  .community-steps { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .gatherings-grid { grid-template-columns: 1fr !important; gap: 60px !important; }
+  .community-teaser-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
 
   /* Stats strip */
   .stats-row { flex-direction: column !important; align-items: center !important; gap: 40px !important; }

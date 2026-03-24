@@ -3,7 +3,29 @@
     "allow": [
       "Bash(npm run:*)",
       "Bash(npx:*)",
-      "Bash(printf 'n\\\\n')"
+      "Bash(printf 'n\\\\n')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/the-system)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} \" http://localhost:3001/the-experience)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/stories)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} \" http://localhost:3001/begin)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/for-organisations)",
+      "Bash(curl -s http://localhost:3001/begin)",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/)",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/begin)",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/the-system)",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/sitemap.xml)",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/robots.txt)",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/stories)",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/the-experience)",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/for-organisations)",
+      "Bash(/usr/bin/curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/opengraph-image)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(brew install:*)",
+      "Bash(lsof -iTCP -sTCP:LISTEN -P)"
     ]
   }
 }

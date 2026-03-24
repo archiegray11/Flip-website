@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import WaitlistForm from '@/components/WaitlistForm'
+import CostBreakdown from '@/components/CostBreakdown'
 
 export const metadata: Metadata = {
   title: 'Flip — Live Without Your Phone',
@@ -333,6 +335,121 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── TRANSPARENCY SECTION ─── */}
+      <section
+        style={{
+          background: '#F5F0E8',
+          padding: '120px 40px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <div style={{ maxWidth: '800px', width: '100%' }}>
+          <ScrollReveal>
+            <div
+              style={{
+                fontFamily: mono,
+                fontSize: '10px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.2em',
+                color: '#C4572A',
+                marginBottom: '16px',
+              }}
+            >
+              What goes into every kit
+            </div>
+            <div
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '52px',
+                color: '#1A1A18',
+                letterSpacing: '-0.02em',
+                lineHeight: 1.1,
+                marginBottom: '64px',
+              }}
+            >
+              £99. Here&apos;s exactly where it goes.
+            </div>
+          </ScrollReveal>
+          <CostBreakdown />
+        </div>
+      </section>
+
+      {/* ─── COMMUNITY TEASER ─── */}
+      <section style={{ background: '#F5F0E8', padding: '80px 40px', borderTop: '1px solid rgba(26,26,24,0.1)' }}>
+        <ScrollReveal>
+          <div
+            className="community-teaser-grid"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '80px',
+              alignItems: 'center',
+            }}
+          >
+            {/* Left */}
+            <div>
+              <div
+                style={{
+                  fontFamily: serif,
+                  fontWeight: 300,
+                  fontStyle: 'italic',
+                  fontSize: '40px',
+                  color: '#C4572A',
+                  lineHeight: 1.1,
+                }}
+              >
+                The community.
+              </div>
+              <div
+                style={{
+                  fontFamily: serif,
+                  fontWeight: 300,
+                  fontSize: '36px',
+                  color: '#1A1A18',
+                  lineHeight: 1.1,
+                  marginTop: '8px',
+                }}
+              >
+                For people who&apos;ve done it.
+              </div>
+            </div>
+
+            {/* Right */}
+            <div>
+              <p
+                style={{
+                  fontFamily: serif,
+                  fontWeight: 300,
+                  fontSize: '17px',
+                  color: '#4A4A44',
+                  lineHeight: 1.8,
+                  margin: '0 0 20px',
+                }}
+              >
+                Twice a year, alumni gather in person. You&apos;ll find out about it by post.
+              </p>
+              <Link
+                href="/community"
+                className="teaser-link"
+                style={{
+                  fontFamily: mono,
+                  fontSize: '10px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
+                  color: '#1A1A18',
+                  textDecoration: 'none',
+                }}
+              >
+                Learn more →
+              </Link>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* ─── SECTION 4: SOCIAL PROOF STRIP ─── */}
       <section style={{ background: '#1A1A18', padding: '60px 40px' }}>
         <ScrollReveal>
@@ -393,10 +510,11 @@ export default function Home() {
       <section
         style={{
           background: '#F5F0E8',
-          padding: '120px 40px',
+          padding: '100px 40px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          borderTop: '1px solid rgba(26,26,24,0.08)',
         }}
       >
         <div style={{ maxWidth: '560px', width: '100%' }}>
@@ -408,7 +526,7 @@ export default function Home() {
                 textTransform: 'uppercase',
                 color: '#C4572A',
                 letterSpacing: '0.15em',
-                marginBottom: '16px',
+                marginBottom: '12px',
               }}
             >
               Join the experiment
@@ -441,6 +559,45 @@ export default function Home() {
           <ScrollReveal delay={150}>
             <WaitlistForm />
           </ScrollReveal>
+        </div>
+      </section>
+      {/* ─── REINVESTMENT STATEMENT ─── */}
+      <section
+        style={{
+          background: '#F5F0E8',
+          padding: '40px 40px',
+          display: 'flex',
+          justifyContent: 'center',
+          borderTop: '1px solid rgba(26,26,24,0.1)',
+        }}
+      >
+        <div style={{ maxWidth: '640px', width: '100%' }}>
+          <div
+            style={{
+              fontFamily: mono,
+              fontSize: '9px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: '#9A9A90',
+              marginBottom: '12px',
+            }}
+          >
+            About the margins
+          </div>
+          <p
+            style={{
+              fontFamily: serif,
+              fontWeight: 300,
+              fontSize: '16px',
+              color: '#4A4A44',
+              lineHeight: 1.7,
+              margin: 0,
+            }}
+          >
+            The £16 profit per kit doesn&apos;t go to me. It goes back into Flip — better sheets,
+            better sourcing, building the community meetups, eventually the person helping run this
+            when I&apos;m not around. This is a business built to last, not to extract.
+          </p>
         </div>
       </section>
     </main>
