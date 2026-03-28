@@ -81,7 +81,7 @@ export default function Begin() {
                 marginTop: '24px',
               }}
             >
-              Ten kits. Ten people. All gone. We&apos;re building batch two now — a refined version
+              They went faster than we expected. We&apos;re building batch two now — a refined version
               based on everything we learned from batch one. Join the waitlist below.
             </p>
 

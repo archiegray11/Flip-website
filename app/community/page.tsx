@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
-import CommunityForm from '@/components/CommunityForm'
 import InvitationCard from '@/components/InvitationCard'
 import CommunityLogin from '@/components/CommunityLogin'
 import GatheringCard from '@/components/GatheringCard'
@@ -41,7 +40,7 @@ const steps = [
   },
   {
     title: 'You write back',
-    body: "To RSVP you send a letter back. Your name, whether you're coming, anything you want to say. Some people write a paragraph. Some people write three pages. Both are welcome.",
+    body: "To RSVP simply send a letter back with your name and whether you are coming. That is all we need.",
     icon: (
       <svg width="40" height="72" viewBox="0 0 40 72" fill="none" aria-hidden="true">
         <path d="M14 3 H26 L33 54 L20 68 L7 54 Z" stroke="#1A1A18" strokeWidth="1" />
@@ -561,9 +560,17 @@ export default function CommunityPage() {
             </p>
           </ScrollReveal>
 
-          <ScrollReveal delay={150}>
-            <CommunityForm />
-          </ScrollReveal>
+          <div
+            style={{
+              fontFamily: mono,
+              fontSize: '10px',
+              color: '#9A9A90',
+              marginTop: '40px',
+              textAlign: 'center',
+            }}
+          >
+            Address details collected when you complete your Flip.
+          </div>
         </div>
       </section>
 

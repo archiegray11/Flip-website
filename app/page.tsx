@@ -686,7 +686,7 @@ export default function Home() {
                 marginTop: '24px',
               }}
             >
-              The first ten kits are gone. We&apos;re preparing batch two now. Join the waitlist and
+              The first batch is gone. We&apos;re preparing batch two now. Join the waitlist and
               you&apos;ll be first to know when they&apos;re ready — and first to get one.
             </p>
             <WaitlistForm
