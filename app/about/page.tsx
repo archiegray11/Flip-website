@@ -74,9 +74,10 @@ export default function About() {
       </section>
 
       {/* ─── THE STORY ─── */}
-      <section style={{ background: '#F5F0E8', padding: '120px 40px' }}>
+      <section className="about-story-section" style={{ background: '#F5F0E8', padding: '120px 40px' }}>
         <ScrollReveal>
           <div
+            className="about-story-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
@@ -87,8 +88,9 @@ export default function About() {
             }}
           >
             {/* Left: photo */}
-            <div>
+            <div className="about-photo-col">
               <div
+                className="about-photo-img"
                 style={{
                   width: '100%',
                   aspectRatio: '2 / 3',
@@ -97,6 +99,7 @@ export default function About() {
                 }}
               />
               <div
+                className="about-photo-caption"
                 style={{
                   fontFamily: mono,
                   fontSize: '9px',
@@ -109,7 +112,7 @@ export default function About() {
             </div>
 
             {/* Right: text */}
-            <div style={{ maxWidth: '380px' }}>
+            <div className="about-text-col" style={{ maxWidth: '380px' }}>
               {[
                 'It started in 2021. I was abroad at 19 and my phone smashed. Absolutely finished. I rang my mum to try and fix the problem but being away it wasn\'t possible. I went without for a month.\n\nI felt the best I had in a long time. It was truly an eye opening experience.',
                 'When I got back to the UK I tried living without a phone entirely but it just wasn\'t possible. Before university I got a phone back because I didn\'t want to be left out socially. I found myself slipping back into those same bad habits.\n\nOn and off again. Different flip phones, no phone, greyscaling, deleting apps and redownloading them. Nothing worked.',

@@ -304,8 +304,17 @@ body {
   .gatherings-grid { grid-template-columns: 1fr !important; gap: 60px !important; }
   .community-teaser-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
   .founder-grid { flex-direction: column-reverse !important; gap: 40px !important; }
-  .about-story-grid { flex-direction: column !important; }
-  .about-story-grid > div:last-child { padding-left: 0 !important; margin-top: 40px; }
+  .about-story-section { padding: 60px 0 !important; }
+  .about-story-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: 100% !important;
+    gap: 0 !important;
+    padding: 0 24px !important;
+  }
+  .about-text-col { order: 1 !important; max-width: 100% !important; }
+  .about-photo-col { order: 2 !important; margin-top: 32px !important; }
+  .about-photo-img { aspect-ratio: 3/4 !important; }
 
   /* Stats strip */
   .stats-row { flex-direction: column !important; align-items: center !important; gap: 40px !important; }
