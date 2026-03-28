@@ -710,7 +710,7 @@ export default function Home() {
               }}
             >
               {/* Left — Begin */}
-              <div style={{ textAlign: 'center' }}>
+              <div className="cta-btn-col" style={{ textAlign: 'center' }}>
                 <div
                   style={{
                     fontFamily: mono,
@@ -743,7 +743,9 @@ export default function Home() {
               />
 
               {/* Right — Stay in touch */}
-              <StayInTouch />
+              <div className="cta-btn-col" style={{ textAlign: 'center' }}>
+                <StayInTouch />
+              </div>
             </div>
           </ScrollReveal>
         </div>

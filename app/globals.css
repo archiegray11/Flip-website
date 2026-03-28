@@ -322,7 +322,7 @@ body {
     gap: 12px !important;
     align-items: center !important;
   }
-  .cta-btn-row > div {
+  .cta-btn-col {
     width: 100% !important;
     max-width: 320px !important;
     margin: 0 auto !important;
@@ -336,4 +336,31 @@ body {
   .menu-overlay-link { font-size: 32px !important; }
   .menu-links-container { gap: 20px !important; padding: 40px 24px !important; }
   .menu-close-row { padding: 20px 24px !important; }
+
+  /* Kit scroller panels — text first, image below */
+  .kit-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 40px 24px !important;
+    gap: 0 !important;
+  }
+  .kit-panel-text { order: 1; }
+  .kit-panel-image {
+    order: 2 !important;
+    width: 100% !important;
+    aspect-ratio: 4/3 !important;
+    height: auto !important;
+    margin-top: 24px !important;
+  }
+  .kit-scroller-area { min-height: auto !important; }
+
+  /* The System intro — reduce gap to first panel */
+  .system-intro-section { padding: 60px 24px 40px !important; }
+
+  /* Flip Album columns → single column */
+  .flip-album-cols {
+    grid-template-columns: 1fr !important;
+    padding: 0 24px !important;
+  }
+  .flip-album-cols > div { margin-bottom: 32px !important; }
 }

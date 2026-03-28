@@ -18,7 +18,7 @@ export default function TheSystem() {
   return (
     <main>
       {/* ─── SECTION 1: PAGE INTRO ─── */}
-      <section style={{ background: '#F5F0E8', padding: '120px 40px 80px' }}>
+      <section className="system-intro-section" style={{ background: '#F5F0E8', padding: '120px 40px 80px' }}>
         <ScrollReveal>
           <div
             style={{

@@ -159,7 +159,7 @@ export default function KitScroller() {
 
         <div
           ref={scrollerRef}
-          className="kit-scroller"
+          className="kit-scroller kit-scroller-area"
           onScroll={handleScroll}
           style={{
             display: 'flex',
@@ -171,6 +171,7 @@ export default function KitScroller() {
           {panels.map((panel) => (
             <div
               key={panel.number}
+              className="kit-panel"
               style={{
                 flexShrink: 0,
                 width: '100vw',
@@ -185,7 +186,7 @@ export default function KitScroller() {
               }}
             >
               {/* Left column */}
-              <div>
+              <div className="kit-panel-text">
                 <div
                   style={{
                     fontFamily: mono,
@@ -324,6 +325,7 @@ export default function KitScroller() {
 
               {/* Right column — image placeholder */}
               <div
+                className="kit-panel-image"
                 style={{
                   aspectRatio: '3 / 4',
                   background: 'rgba(26,26,24,0.06)',
