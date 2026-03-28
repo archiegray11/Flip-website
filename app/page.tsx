@@ -3,7 +3,7 @@ import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import CostBreakdown from '@/components/CostBreakdown'
 import HeroScrollIndicator from '@/components/HeroScrollIndicator'
-import StayInTouch from '@/components/StayInTouch'
+import WaitlistForm from '@/components/WaitlistForm'
 
 export const metadata: Metadata = {
   title: 'Flip — Live Without Your Phone',
@@ -649,7 +649,7 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* ─── SECTION 5: CTA / WAITLIST ─── */}
+      {/* ─── SECTION 5: WAITLIST ─── */}
       <section
         id="waitlist"
         style={{
@@ -661,7 +661,7 @@ export default function Home() {
           borderTop: '1px solid rgba(26,26,24,0.08)',
         }}
       >
-        <div style={{ maxWidth: '640px', width: '100%', textAlign: 'center' }}>
+        <div style={{ maxWidth: '560px', width: '100%' }}>
           <ScrollReveal>
             <div
               style={{
@@ -673,7 +673,7 @@ export default function Home() {
                 marginBottom: '16px',
               }}
             >
-              Ready?
+              Batch one
             </div>
             <div
               style={{
@@ -681,73 +681,42 @@ export default function Home() {
                 fontWeight: 300,
                 fontSize: '48px',
                 color: '#1A1A18',
+                letterSpacing: '-0.02em',
                 lineHeight: 1.1,
               }}
             >
-              Begin your seven days.
+              Sold out.
             </div>
             <div
               style={{
                 fontFamily: serif,
                 fontWeight: 300,
                 fontStyle: 'italic',
-                fontSize: '20px',
-                color: '#4A4A44',
+                fontSize: '24px',
+                color: '#C4572A',
                 marginTop: '8px',
               }}
             >
-              The kit ships within two working days.
+              Faster than we expected.
             </div>
-
-            {/* Two columns */}
-            <div
-              className="cta-btn-row"
+            <p
               style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '48px',
-                marginTop: '48px',
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '18px',
+                color: '#4A4A44',
+                maxWidth: '560px',
+                lineHeight: 1.8,
+                marginTop: '24px',
               }}
             >
-              {/* Left — Begin */}
-              <div className="cta-btn-col" style={{ textAlign: 'center' }}>
-                <div
-                  style={{
-                    fontFamily: mono,
-                    fontSize: '9px',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                    color: '#9A9A90',
-                    marginBottom: '12px',
-                  }}
-                >
-                  Ready to go
-                </div>
-                <div className="teaser-pulse-wrapper">
-                  <Link href="/#waitlist" className="teaser-pulse-btn">
-                    Join the waitlist
-                  </Link>
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div
-                className="cta-btn-divider"
-                style={{
-                  width: '1px',
-                  height: '60px',
-                  background: 'rgba(26,26,24,0.08)',
-                  alignSelf: 'center',
-                  flexShrink: 0,
-                }}
-              />
-
-              {/* Right — Stay in touch */}
-              <div className="cta-btn-col" style={{ textAlign: 'center' }}>
-                <StayInTouch />
-              </div>
-            </div>
+              The first ten kits are gone. We&apos;re preparing batch two now. Join the waitlist and
+              you&apos;ll be first to know when they&apos;re ready — and first to get one.
+            </p>
+            <WaitlistForm
+              buttonText="Reserve my place"
+              note="No payment now. Just your place in the queue."
+            />
           </ScrollReveal>
         </div>
       </section>

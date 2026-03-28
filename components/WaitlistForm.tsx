@@ -7,9 +7,18 @@ const serif = 'var(--font-cormorant)'
 
 type State = 'idle' | 'loading' | 'success' | 'error'
 
-export default function WaitlistForm() {
+export default function WaitlistForm({
+  buttonText = 'Join the waitlist',
+  note = 'No spam. No monthly emails. Just a single message when your kit is ready.',
+  dark = false,
+}: {
+  buttonText?: string
+  note?: string
+  dark?: boolean
+}) {
   const [state, setState] = useState<State>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  const [btnHovered, setBtnHovered] = useState(false)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -34,6 +43,30 @@ export default function WaitlistForm() {
     }
   }
 
+  const inputStyle = dark
+    ? {
+        border: '1px solid rgba(245,240,232,0.2)',
+        color: '#F5F0E8',
+        fontFamily: serif,
+        fontWeight: 300,
+        fontSize: '16px',
+      }
+    : {
+        border: '1px solid rgba(26,26,24,0.2)',
+        color: '#1A1A18',
+        fontFamily: serif,
+        fontWeight: 300,
+        fontSize: '16px',
+      }
+
+  const btnBg = dark
+    ? btnHovered ? '#E8977A' : '#F5F0E8'
+    : btnHovered ? '#C4572A' : '#1A1A18'
+
+  const btnColor = dark ? '#1A1A18' : '#F5F0E8'
+  const noteColor = dark ? 'rgba(245,240,232,0.4)' : '#9A9A90'
+  const errorColor = dark ? '#E8977A' : '#C4572A'
+
   if (state === 'success') {
     return (
       <div style={{ marginTop: '40px' }}>
@@ -43,7 +76,7 @@ export default function WaitlistForm() {
             fontWeight: 300,
             fontStyle: 'italic',
             fontSize: '28px',
-            color: '#C4572A',
+            color: dark ? '#E8977A' : '#C4572A',
           }}
         >
           You&apos;re on the list.
@@ -52,7 +85,7 @@ export default function WaitlistForm() {
           style={{
             fontFamily: mono,
             fontSize: '10px',
-            color: '#9A9A90',
+            color: noteColor,
             marginTop: '8px',
           }}
         >
@@ -73,38 +106,29 @@ export default function WaitlistForm() {
           className="waitlist-input"
           style={{
             width: '100%',
-            border: '1px solid rgba(26,26,24,0.2)',
             padding: '14px 16px',
             background: 'transparent',
-            fontFamily: serif,
-            fontWeight: 300,
-            fontSize: '16px',
-            color: '#1A1A18',
             boxSizing: 'border-box',
             display: 'block',
+            outline: 'none',
+            ...inputStyle,
           }}
         />
         {state === 'error' && errorMsg && (
-          <div
-            style={{
-              fontFamily: mono,
-              fontSize: '10px',
-              color: '#C4572A',
-              marginTop: '8px',
-            }}
-          >
+          <div style={{ fontFamily: mono, fontSize: '10px', color: errorColor, marginTop: '8px' }}>
             {errorMsg}
           </div>
         )}
         <button
           type="submit"
           disabled={state === 'loading'}
-          className="waitlist-submit"
+          onMouseEnter={() => setBtnHovered(true)}
+          onMouseLeave={() => setBtnHovered(false)}
           style={{
             display: 'block',
             width: '100%',
-            background: '#1A1A18',
-            color: '#F5F0E8',
+            background: btnBg,
+            color: btnColor,
             fontFamily: mono,
             fontSize: '10px',
             textTransform: 'uppercase',
@@ -113,20 +137,21 @@ export default function WaitlistForm() {
             border: 'none',
             cursor: 'pointer',
             marginTop: '12px',
+            transition: 'background 200ms ease',
           }}
         >
-          {state === 'loading' ? 'Joining...' : 'Join the waitlist'}
+          {state === 'loading' ? 'Joining...' : buttonText}
         </button>
         <p
           style={{
             fontFamily: mono,
             fontSize: '9px',
-            color: '#9A9A90',
+            color: noteColor,
             textAlign: 'center',
             marginTop: '16px',
           }}
         >
-          No spam. No monthly emails. Just a single message when your kit is ready.
+          {note}
         </p>
       </form>
     </div>

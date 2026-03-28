@@ -119,7 +119,7 @@ export default function TheExperience() {
               textDecoration: 'none',
             }}
           >
-            Join the waitlist
+            Join the waitlist for batch two
           </a>
         </ScrollReveal>
       </section>

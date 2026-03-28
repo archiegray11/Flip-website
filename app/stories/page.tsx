@@ -214,7 +214,7 @@ export default function Stories() {
           </p>
           <div className="teaser-pulse-wrapper" style={{ display: 'inline-block' }}>
             <Link href="/#waitlist" className="teaser-pulse-btn">
-              Join the waitlist
+              Join the waitlist for batch two
             </Link>
           </div>
         </ScrollReveal>

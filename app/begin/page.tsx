@@ -39,46 +39,66 @@ export default function Begin() {
       {/* ─── INTRO ─── */}
       <section style={{ background: '#1A1A18', padding: '100px 40px 80px' }}>
         <ScrollReveal>
-          <div
-            style={{
-              fontFamily: mono,
-              fontSize: '10px',
-              textTransform: 'uppercase',
-              color: '#E8977A',
-              letterSpacing: '0.15em',
-              marginBottom: '20px',
-            }}
-          >
-            Begin
-          </div>
+          <div style={{ maxWidth: '560px' }}>
+            <div
+              style={{
+                fontFamily: mono,
+                fontSize: '10px',
+                textTransform: 'uppercase',
+                color: '#E8977A',
+                letterSpacing: '0.15em',
+                marginBottom: '20px',
+              }}
+            >
+              Availability
+            </div>
 
-          <div
-            style={{
-              fontFamily: serif,
-              fontWeight: 300,
-              fontSize: '64px',
-              letterSpacing: '-0.02em',
-              lineHeight: 1.0,
-              color: '#F5F0E8',
-            }}
-          >
-            Coming soon.
-          </div>
+            <div
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '64px',
+                letterSpacing: '-0.02em',
+                lineHeight: 1.0,
+                color: '#F5F0E8',
+              }}
+            >
+              Sold out.
+            </div>
 
-          <div
-            style={{
-              fontFamily: serif,
-              fontWeight: 300,
-              fontStyle: 'italic',
-              fontSize: '24px',
-              color: '#E8977A',
-              marginTop: '16px',
-              maxWidth: '520px',
-              lineHeight: 1.5,
-            }}
-          >
-            We&apos;re preparing the first kits. Join the waitlist and you&apos;ll be first to know
-            when they&apos;re ready.
+            <div
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontStyle: 'italic',
+                fontSize: '24px',
+                color: '#E8977A',
+                marginTop: '8px',
+              }}
+            >
+              Batch one is gone.
+            </div>
+
+            <p
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '18px',
+                color: 'rgba(245,240,232,0.6)',
+                maxWidth: '480px',
+                lineHeight: 1.8,
+                marginTop: '24px',
+              }}
+            >
+              Ten kits. Ten people. All gone. We&apos;re building batch two now — a refined version
+              based on everything we learned from batch one. Join the waitlist below.
+            </p>
+
+            <WaitlistForm
+              dark
+              buttonText="Reserve my place in batch two"
+              note="No payment now. Pricing confirmed when batch two is ready."
+            />
           </div>
         </ScrollReveal>
       </section>
@@ -178,7 +198,6 @@ export default function Begin() {
               ))}
             </div>
 
-            <WaitlistForm />
           </div>
         </ScrollReveal>
       </section>
