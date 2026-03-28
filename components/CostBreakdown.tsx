@@ -125,26 +125,33 @@ export default function CostBreakdown() {
       </div>
 
       {/* Tooltip — fixed so it follows cursor across whole page */}
-      {tooltip && (
-        <div
-          style={{
-            position: 'fixed',
-            left: tooltip.x + 16,
-            top: tooltip.y - 36,
-            background: '#1A1A18',
-            color: '#F5F0E8',
-            padding: '8px 14px',
-            fontFamily: mono,
-            fontSize: '11px',
-            letterSpacing: '0.05em',
-            pointerEvents: 'none',
-            zIndex: 9999,
-            whiteSpace: 'nowrap',
-          }}
-        >
-          {tooltip.name} — £{tooltip.price}
-        </div>
-      )}
+      {tooltip && (() => {
+        const windowWidth = typeof window !== 'undefined' ? window.innerWidth : 1024
+        const goLeft = tooltip.x > windowWidth / 2
+        const tooltipLeft = Math.max(16, goLeft ? tooltip.x - 16 : tooltip.x + 16)
+        return (
+          <div
+            style={{
+              position: 'fixed',
+              left: tooltipLeft,
+              top: tooltip.y - 36,
+              transform: goLeft ? 'translateX(-100%)' : 'none',
+              background: '#1A1A18',
+              color: '#F5F0E8',
+              padding: '8px 14px',
+              fontFamily: mono,
+              fontSize: '11px',
+              letterSpacing: '0.05em',
+              pointerEvents: 'none',
+              zIndex: 9999,
+              whiteSpace: 'nowrap',
+              maxWidth: 'calc(100vw - 48px)',
+            }}
+          >
+            {tooltip.name} — £{tooltip.price}
+          </div>
+        )
+      })()}
 
       {/* Legend */}
       <div

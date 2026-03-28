@@ -188,6 +188,7 @@ export default function SiteNav() {
       >
         {/* Close */}
         <div
+          className="menu-close-row"
           style={{
             display: 'flex',
             justifyContent: 'flex-end',
@@ -218,6 +219,7 @@ export default function SiteNav() {
         {/* Links */}
         <div
           key={animKey}
+          className="menu-links-container"
           style={{
             flex: 1,
             display: 'flex',

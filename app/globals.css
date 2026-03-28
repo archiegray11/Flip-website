@@ -290,6 +290,7 @@ body {
 
   /* Hero */
   .hero-headline { font-size: 48px !important; }
+  .hero-center-content { padding: 0 24px !important; }
 
   /* Grids → single column */
   .grid-3col { grid-template-columns: 1fr !important; }
@@ -314,4 +315,25 @@ body {
   .timeline-layout { flex-direction: column !important; padding: 40px 24px 60px !important; }
   .timeline-sticky { display: none !important; }
   .timeline-content { padding-left: 0 !important; }
+
+  /* Bottom CTA — stack buttons vertically */
+  .cta-btn-row {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+  .cta-btn-row > div {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .cta-btn-divider { display: none !important; }
+
+  /* Menu overlay — reduce font sizes */
+  .menu-overlay-link { font-size: 32px !important; }
+  .menu-links-container { gap: 20px !important; padding: 40px 24px !important; }
+  .menu-close-row { padding: 20px 24px !important; }
 }

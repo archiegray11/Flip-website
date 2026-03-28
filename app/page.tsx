@@ -93,7 +93,7 @@ export default function Home() {
 
         {/* Center content */}
         <ScrollReveal>
-          <div style={{ textAlign: 'center' }}>
+          <div className="hero-center-content" style={{ textAlign: 'center' }}>
             {/* Headline */}
             <div
               className="hero-headline"
@@ -135,9 +135,11 @@ export default function Home() {
                 marginTop: '40px',
               }}
             >
-              <button
+              <Link
+                href="/begin"
                 className="hero-btn-primary"
                 style={{
+                  display: 'inline-block',
                   background: '#F5F0E8',
                   color: '#1A1A18',
                   fontFamily: mono,
@@ -145,14 +147,15 @@ export default function Home() {
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
                   padding: '16px 32px',
-                  border: 'none',
-                  cursor: 'pointer',
+                  textDecoration: 'none',
                 }}
               >
                 Begin the experiment
-              </button>
-              <button
+              </Link>
+              <Link
+                href="/the-system"
                 style={{
+                  display: 'inline-block',
                   background: 'transparent',
                   color: 'rgba(245,240,232,0.6)',
                   fontFamily: mono,
@@ -161,11 +164,11 @@ export default function Home() {
                   letterSpacing: '0.1em',
                   padding: '16px 32px',
                   border: '1px solid rgba(245,240,232,0.25)',
-                  cursor: 'pointer',
+                  textDecoration: 'none',
                 }}
               >
                 See what&apos;s in the kit
-              </button>
+              </Link>
             </div>
           </div>
         </ScrollReveal>
@@ -697,6 +700,7 @@ export default function Home() {
 
             {/* Two columns */}
             <div
+              className="cta-btn-row"
               style={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -728,6 +732,7 @@ export default function Home() {
 
               {/* Divider */}
               <div
+                className="cta-btn-divider"
                 style={{
                   width: '1px',
                   height: '60px',
