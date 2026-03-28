@@ -95,10 +95,11 @@ export default function Stories() {
       </section>
 
       {/* ─── STORIES ─── */}
-      <section style={{ background: '#F5F0E8', padding: '0 0 80px' }}>
+      <section className="stories-section" style={{ background: '#F5F0E8', padding: '0 0 80px' }}>
         {stories.map((story, i) => (
           <ScrollReveal key={story.name} delay={i * 80}>
             <article
+              className="story-article"
               style={{
                 borderTop: '1px solid rgba(26,26,24,0.1)',
                 padding: '80px 40px',
@@ -107,8 +108,9 @@ export default function Stories() {
               }}
             >
               {/* Left: person details */}
-              <div style={{ width: '200px', flexShrink: 0 }}>
+              <div className="story-meta" style={{ width: '200px', flexShrink: 0 }}>
                 <div
+                  className="story-name"
                   style={{
                     fontFamily: serif,
                     fontWeight: 300,
@@ -143,7 +145,7 @@ export default function Stories() {
               </div>
 
               {/* Right: content */}
-              <div style={{ flex: 1, paddingLeft: '60px' }}>
+              <div className="story-content" style={{ flex: 1, paddingLeft: '60px' }}>
                 {/* Pull quote */}
                 <blockquote
                   style={{
@@ -187,6 +189,7 @@ export default function Stories() {
 
       {/* ─── CLOSING ─── */}
       <section
+        className="stories-closing"
         style={{
           background: 'rgba(26,26,24,0.02)',
           padding: '80px 40px',

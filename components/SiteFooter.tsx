@@ -22,6 +22,7 @@ export default function SiteFooter() {
       }}
     >
       <div
+        className="footer-inner"
         style={{
           maxWidth: '960px',
           margin: '0 auto',

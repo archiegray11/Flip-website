@@ -337,6 +337,34 @@ body {
   .menu-links-container { gap: 20px !important; padding: 40px 24px !important; }
   .menu-close-row { padding: 20px 24px !important; }
 
+  /* Kit scroller — hide nav arrows on mobile */
+  .kit-nav-arrow { display: none !important; }
+
+  /* Stories — vertical single-column layout */
+  .stories-section { overflow-x: hidden !important; }
+  .story-article {
+    flex-direction: column !important;
+    padding: 40px 24px !important;
+  }
+  .story-meta {
+    width: 100% !important;
+    flex-shrink: 1 !important;
+    margin-bottom: 16px !important;
+  }
+  .story-name { font-size: 28px !important; }
+  .story-content {
+    flex: unset !important;
+    padding-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Stories closing + footer — full width */
+  .stories-closing {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .footer-inner { max-width: 100% !important; }
+
   /* Kit scroller panels — text first, image below */
   .kit-panel {
     display: flex !important;

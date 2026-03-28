@@ -139,6 +139,7 @@ export default function KitScroller() {
             onMouseEnter={() => setHoveredArrow('left')}
             onMouseLeave={() => setHoveredArrow(null)}
             aria-label="Previous item"
+            className="kit-nav-arrow"
             style={arrowStyle('left')}
           >
             &#8249;
@@ -151,6 +152,7 @@ export default function KitScroller() {
             onMouseEnter={() => setHoveredArrow('right')}
             onMouseLeave={() => setHoveredArrow(null)}
             aria-label="Next item"
+            className="kit-nav-arrow"
             style={arrowStyle('right')}
           >
             &#8250;
