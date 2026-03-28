@@ -428,6 +428,73 @@ export default function CommunityPage() {
         </div>
       </section>
 
+      {/* ─── THE FLIP ALBUM ─── */}
+      <section
+        style={{
+          background: 'rgba(26,26,24,0.02)',
+          padding: '80px 40px',
+          borderTop: '1px solid rgba(26,26,24,0.08)',
+        }}
+      >
+        <ScrollReveal>
+          <div style={{ maxWidth: '560px' }}>
+            <div
+              style={{
+                fontFamily: mono,
+                fontSize: '10px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.15em',
+                color: '#C4572A',
+                marginBottom: '16px',
+              }}
+            >
+              The Flip Album
+            </div>
+            <div
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontStyle: 'italic',
+                fontSize: '48px',
+                color: '#C4572A',
+                lineHeight: 1.0,
+              }}
+            >
+              Twice a year.
+            </div>
+            <div
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '36px',
+                color: '#1A1A18',
+                lineHeight: 1.1,
+                marginTop: '8px',
+              }}
+            >
+              Everything comes together.
+            </div>
+            <p
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '17px',
+                color: '#4A4A44',
+                maxWidth: '560px',
+                lineHeight: 1.9,
+                marginTop: '24px',
+              }}
+            >
+              Every photo taken during every Flip experience gets developed and printed. Twice a year
+              at our gatherings, the albums come out. You find your photos mixed in with everyone
+              else&apos;s. Strangers&apos; moments beside yours.
+              <br /><br />
+              No screens. No scrolling. Just printed photographs and the people who took them.
+            </p>
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* ─── SECTION 4: THE LETTER ─── */}
       <section
         style={{

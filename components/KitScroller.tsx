@@ -16,11 +16,12 @@ const panels = [
   },
   {
     number: '02 / 08',
-    name: 'Pocket Notebook',
-    tagline: 'Your mind, externalised.',
+    name: 'The Flip Book',
+    tagline: 'You are not the first person to hold this.',
     philosophy:
-      "Notes, to-do lists, ideas, things you'd normally screenshot or voice-memo. The notebook is slower, which means you write what actually matters. Pages fill up differently when you can't delete anything.",
-    replaces: 'Notes · Reminders · Voice Memos',
+      "This notebook has already been written in. By someone you will never meet, who did exactly what you are about to do. When your seven days are over, you return it. The next person receives it. Over time it becomes something no company could manufacture — a layered record of real human experience.\n\nYou have five to ten pages. Use them honestly. Someone will read what you write.",
+    rule: 'Do not skip ahead.',
+    replaces: 'Notes · Reminders · The feeling of writing alone',
   },
   {
     number: '03 / 08',
@@ -32,11 +33,14 @@ const panels = [
   },
   {
     number: '04 / 08',
-    name: 'Film Camera',
-    tagline: '36 exposures. Choose wisely.',
+    name: 'The Camera',
+    tagline: "A camera you won't check.",
     philosophy:
-      "When you can only take 36 photographs, you only take the ones that matter. No burst mode. No deleting. No checking the screen after every shot. You look at things properly again before you photograph them.",
-    replaces: 'iPhone Camera · Instagram · Photo Library',
+      "Each kit includes a film camera. You take photos during your seven days — moments you would have otherwise missed, or scrolled past, or not noticed at all. No previews. No retakes. No curation.\n\nWhen you return the kit, the camera comes back too. We develop the film. Your photos are added to the Flip Album.",
+    extraItalic: "You won't see them straight away.",
+    extraBody:
+      "Twice a year we bring everything together. Every photo from every kit. Printed and placed into the Flip Album. That's when you see what you captured. Not on a screen. In a room. With everyone else.",
+    replaces: 'iPhone Camera · Instagram · The urge to perform',
   },
   {
     number: '05 / 08',
@@ -229,10 +233,70 @@ export default function KitScroller() {
                     lineHeight: 1.8,
                     marginTop: '24px',
                     maxWidth: '440px',
+                    whiteSpace: 'pre-line',
                   }}
                 >
                   {panel.philosophy}
                 </p>
+
+                {'rule' in panel && panel.rule && (
+                  <>
+                    <div
+                      style={{
+                        borderTop: '1px solid rgba(26,26,24,0.1)',
+                        margin: '24px 0',
+                      }}
+                    />
+                    <div
+                      style={{
+                        fontFamily: mono,
+                        fontSize: '10px',
+                        color: '#1A1A18',
+                        letterSpacing: '0.15em',
+                      }}
+                    >
+                      {panel.rule}
+                    </div>
+                  </>
+                )}
+
+                {'extraItalic' in panel && panel.extraItalic && (
+                  <>
+                    <div
+                      style={{
+                        borderTop: '1px solid rgba(26,26,24,0.1)',
+                        margin: '24px 0',
+                      }}
+                    />
+                    <div
+                      style={{
+                        fontFamily: serif,
+                        fontWeight: 300,
+                        fontStyle: 'italic',
+                        fontSize: '18px',
+                        color: '#1A1A18',
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {panel.extraItalic}
+                    </div>
+                    {'extraBody' in panel && panel.extraBody && (
+                      <p
+                        style={{
+                          fontFamily: serif,
+                          fontWeight: 300,
+                          fontSize: '16px',
+                          color: '#4A4A44',
+                          lineHeight: 1.8,
+                          marginTop: '12px',
+                          maxWidth: '440px',
+                        }}
+                      >
+                        {panel.extraBody}
+                      </p>
+                    )}
+                  </>
+                )}
 
                 <div
                   style={{
@@ -241,7 +305,7 @@ export default function KitScroller() {
                     color: '#9A9A90',
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
-                    marginTop: '32px',
+                    marginTop: ('rule' in panel && panel.rule) || ('extraItalic' in panel && panel.extraItalic) ? '24px' : '32px',
                     marginBottom: '6px',
                   }}
                 >

@@ -30,6 +30,10 @@ const faqs = [
     q: "What if the kit arrives damaged?",
     a: "Return it and you'll be issued a full refund. No questions asked.",
   },
+  {
+    q: "What happens to my photos?",
+    a: "Your film is developed after your kit comes back to us. Your photos are added to the Flip Album — a growing physical archive of every Flip experience. You see them at one of our twice-yearly gatherings. Printed. In person. Not on a screen.",
+  },
 ]
 
 export default function HonestBit() {

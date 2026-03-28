@@ -91,6 +91,299 @@ export default function TheSystem() {
       {/* ─── SECTION 2: HORIZONTAL KIT SCROLLER ─── */}
       <KitScroller />
 
+      {/* ─── THE FLIP BOOK SECTION ─── */}
+      <section style={{ background: '#1A1A18', padding: '120px 40px' }}>
+        <ScrollReveal>
+          <div style={{ maxWidth: '580px' }}>
+            {/* Label */}
+            <div
+              style={{
+                fontFamily: mono,
+                fontSize: '10px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.15em',
+                color: '#E8977A',
+                marginBottom: '24px',
+              }}
+            >
+              The Flip Book
+            </div>
+
+            {/* Headline */}
+            <div
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '64px',
+                letterSpacing: '-0.02em',
+                lineHeight: 1.0,
+                color: '#F5F0E8',
+              }}
+            >
+              One notebook.
+            </div>
+            <div
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '64px',
+                letterSpacing: '-0.02em',
+                lineHeight: 1.0,
+                fontStyle: 'italic',
+                color: '#F5F0E8',
+              }}
+            >
+              Many lives.
+            </div>
+
+            {/* Body */}
+            <p
+              style={{
+                fontFamily: serif,
+                fontWeight: 300,
+                fontSize: '18px',
+                color: 'rgba(245,240,232,0.65)',
+                maxWidth: '580px',
+                lineHeight: 1.9,
+                marginTop: '32px',
+              }}
+            >
+              Every Flip kit contains a notebook already written in by the person before you. They
+              used their seven days, added their pages, and sent it back. It went into the next kit.
+              To someone they will never meet.
+              <br /><br />
+              Over time the notebook becomes layered. Page 1 is one person&apos;s handwriting. Page
+              20 is another&apos;s. Page 200 belongs to someone who hasn&apos;t done their Flip yet.
+              <br /><br />
+              You are not quitting your phone alone. You are joining a sequence.
+            </p>
+
+            {/* Three principles */}
+            <div style={{ marginTop: '48px' }}>
+              {[
+                {
+                  label: 'The rule',
+                  text: 'Do not skip ahead.',
+                },
+                {
+                  label: 'The instruction',
+                  text: 'Leave something honest for the next person.',
+                },
+                {
+                  label: 'The lifecycle',
+                  text: 'Each notebook retires after fifteen people. Then it becomes part of the archive.',
+                },
+              ].map((principle) => (
+                <div
+                  key={principle.label}
+                  style={{
+                    borderTop: '1px solid rgba(245,240,232,0.08)',
+                    padding: '24px 0',
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: mono,
+                      fontSize: '9px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.15em',
+                      color: 'rgba(245,240,232,0.3)',
+                      marginBottom: '8px',
+                    }}
+                  >
+                    {principle.label}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: serif,
+                      fontWeight: 300,
+                      fontStyle: 'italic',
+                      fontSize: '24px',
+                      color: '#F5F0E8',
+                    }}
+                  >
+                    {principle.text}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Closing line */}
+            <div
+              style={{
+                marginTop: '60px',
+                textAlign: 'center',
+                fontFamily: serif,
+                fontWeight: 300,
+                fontStyle: 'italic',
+                fontSize: '28px',
+                color: 'rgba(245,240,232,0.4)',
+              }}
+            >
+              The notebook you receive has already begun.
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* ─── THE FLIP ALBUM SECTION ─── */}
+      <section
+        style={{
+          background: '#F5F0E8',
+          padding: '120px 40px',
+          borderTop: '1px solid rgba(26,26,24,0.08)',
+        }}
+      >
+        <ScrollReveal>
+          {/* Label */}
+          <div
+            style={{
+              fontFamily: mono,
+              fontSize: '10px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: '#C4572A',
+              marginBottom: '24px',
+            }}
+          >
+            The Flip Album
+          </div>
+
+          {/* Headline */}
+          <div
+            style={{
+              fontFamily: serif,
+              fontWeight: 300,
+              fontSize: '64px',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.0,
+              color: '#1A1A18',
+            }}
+          >
+            Every photo.
+          </div>
+          <div
+            style={{
+              fontFamily: serif,
+              fontWeight: 300,
+              fontSize: '64px',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.0,
+              color: '#1A1A18',
+            }}
+          >
+            Every person.
+          </div>
+          <div
+            style={{
+              fontFamily: serif,
+              fontWeight: 300,
+              fontSize: '64px',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.0,
+              color: '#1A1A18',
+            }}
+          >
+            One album.
+          </div>
+
+          {/* Body */}
+          <p
+            style={{
+              fontFamily: serif,
+              fontWeight: 300,
+              fontSize: '18px',
+              color: '#4A4A44',
+              maxWidth: '580px',
+              lineHeight: 1.9,
+              marginTop: '32px',
+            }}
+          >
+            The Flip Album is a growing physical archive of real moments captured during Flip
+            experiences. Across different people, different cities, different lives.
+            <br /><br />
+            It is not a highlight reel. It is not curated for aesthetics. It is raw, uneven, and
+            real — because that is what life without a smartphone actually looks like.
+            <br /><br />
+            Every photo you take during your seven days becomes part of it.
+          </p>
+
+          {/* Three columns */}
+          <div
+            className="flip-album-cols"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '40px',
+              marginTop: '48px',
+            }}
+          >
+            {[
+              {
+                label: 'The camera',
+                text: 'Film. 36 exposures. No preview screen. No delete button. You look properly before you shoot.',
+              },
+              {
+                label: 'The development',
+                text: 'When your kit comes back, the camera comes with it. We develop every roll. We include almost everything — only blank frames are removed.',
+              },
+              {
+                label: 'The reveal',
+                text: "Twice a year at Flip gatherings, the album comes out. Printed photos, physical pages. You find yours mixed in with everyone else's. Not on a screen. In a room.",
+              },
+            ].map((col) => (
+              <div
+                key={col.label}
+                style={{
+                  borderTop: '1px solid rgba(26,26,24,0.1)',
+                  paddingTop: '32px',
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: mono,
+                    fontSize: '9px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.15em',
+                    color: '#9A9A90',
+                    marginBottom: '12px',
+                  }}
+                >
+                  {col.label}
+                </div>
+                <p
+                  style={{
+                    fontFamily: serif,
+                    fontWeight: 300,
+                    fontSize: '16px',
+                    color: '#4A4A44',
+                    lineHeight: 1.8,
+                    margin: 0,
+                  }}
+                >
+                  {col.text}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Closing line */}
+          <div
+            style={{
+              textAlign: 'center',
+              marginTop: '60px',
+              fontFamily: serif,
+              fontWeight: 300,
+              fontStyle: 'italic',
+              fontSize: '28px',
+              color: 'rgba(26,26,24,0.35)',
+            }}
+          >
+            You compare less. You reflect more. Time has passed.
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* ─── SECTION 3: PHILOSOPHY STATEMENT ─── */}
       <section
         style={{

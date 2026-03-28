@@ -33,11 +33,19 @@ const problemPanels = [
   },
 ]
 
-const kitItems: { name: string; desc: string | null }[] = [
+const kitItems: { name: string; desc: string | null; subDesc?: string }[] = [
   { name: 'Flip Phone', desc: 'Calls and texts. Nothing else.' },
-  { name: 'Notebook', desc: 'Your thoughts, uninterrupted.' },
+  {
+    name: 'The Flip Book',
+    desc: 'Already written in. Yours to continue.',
+    subDesc: 'A circulating notebook that passes between every Flip customer. You are not the first. You will not be the last.',
+  },
   { name: 'Pen', desc: 'Slower. Clearer.' },
-  { name: 'Film Camera', desc: 'Capture moments, not content.' },
+  {
+    name: 'The Camera',
+    desc: "A camera you won't check.",
+    subDesc: 'No previews. No retakes. Your photos are developed after your Flip and added to the Flip Album.',
+  },
   { name: 'Map Book', desc: 'Navigate without being navigated.' },
   { name: 'The System', desc: null },
 ]
@@ -350,16 +358,33 @@ export default function Home() {
                     {item.name}
                   </div>
                   {item.desc ? (
-                    <div
-                      style={{
-                        fontFamily: mono,
-                        fontSize: '10px',
-                        color: '#9A9A90',
-                        marginTop: '8px',
-                      }}
-                    >
-                      {item.desc}
-                    </div>
+                    <>
+                      <div
+                        style={{
+                          fontFamily: mono,
+                          fontSize: '10px',
+                          color: '#9A9A90',
+                          marginTop: '8px',
+                        }}
+                      >
+                        {item.desc}
+                      </div>
+                      {item.subDesc && (
+                        <div
+                          style={{
+                            fontFamily: serif,
+                            fontWeight: 300,
+                            fontStyle: 'italic',
+                            fontSize: '14px',
+                            color: '#9A9A90',
+                            marginTop: '8px',
+                            lineHeight: 1.6,
+                          }}
+                        >
+                          {item.subDesc}
+                        </div>
+                      )}
+                    </>
                   ) : (
                     <>
                       <div
