@@ -79,40 +79,12 @@ export default function About() {
           <div
             className="about-story-grid"
             style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '64px',
-              alignItems: 'start',
-              maxWidth: '860px',
+              maxWidth: '560px',
               margin: '0 auto',
             }}
           >
-            {/* Left: photo */}
-            <div className="about-photo-col">
-              <div
-                className="about-photo-img"
-                style={{
-                  width: '100%',
-                  aspectRatio: '2 / 3',
-                  background: 'rgba(26,26,24,0.06)',
-                  border: '1px solid rgba(26,26,24,0.08)',
-                }}
-              />
-              <div
-                className="about-photo-caption"
-                style={{
-                  fontFamily: mono,
-                  fontSize: '9px',
-                  color: '#9A9A90',
-                  marginTop: '10px',
-                }}
-              >
-                Archie, founder of Flip
-              </div>
-            </div>
-
-            {/* Right: text */}
-            <div className="about-text-col" style={{ maxWidth: '380px' }}>
+            {/* Text */}
+            <div className="about-text-col" style={{ maxWidth: '560px' }}>
               {[
                 'It started in 2021. I was abroad at 19 and my phone smashed. Absolutely finished. I rang my mum to try and fix the problem but being away it wasn\'t possible. I went without for a month.\n\nI felt the best I had in a long time. It was truly an eye opening experience.',
                 'When I got back to the UK I tried living without a phone entirely but it just wasn\'t possible. Before university I got a phone back because I didn\'t want to be left out socially. I found myself slipping back into those same bad habits.\n\nOn and off again. Different flip phones, no phone, greyscaling, deleting apps and redownloading them. Nothing worked.',

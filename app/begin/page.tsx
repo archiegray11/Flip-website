@@ -15,22 +15,13 @@ export const metadata: Metadata = {
 const mono = 'var(--font-dm-mono)'
 const serif = 'var(--font-cormorant)'
 
-const includes: { text: string; sub?: string }[] = [
-  { text: 'Nokia 2720 flip phone' },
-  {
-    text: 'The Flip Book',
-    sub: 'A notebook already written in. You add your pages. You pass it on. Over time it becomes something extraordinary.',
-  },
-  { text: 'Pen' },
-  {
-    text: 'Film camera',
-    sub: 'Developed after your seven days. Your photos join the Flip Album — revealed twice a year, in person, with everyone else.',
-  },
-  { text: 'Map book' },
-  { text: 'Alarm clock' },
-  { text: 'Pen pal letter + stamp' },
-  { text: 'The Flip Browser — blocks time-wasting sites on your laptop while you\'re off your phone' },
-  { text: 'The Flip Papers — seven surprises, one each day.' },
+const includes: { text: string }[] = [
+  { text: 'The Nokia 2720 — calls, texts, and maps' },
+  { text: 'Notebook and pen — leather cover, yours to write in' },
+  { text: 'Film camera and film roll — developed by us, added to the Flip Album' },
+  { text: 'The Flip Papers — seven daily surprises, one per day' },
+  { text: 'The Flip Browser Chrome extension — blocks your chosen sites for 7 days' },
+  { text: 'Alarm clock — keeps the phone out of the bedroom' },
 ]
 
 export default function Begin() {
@@ -177,23 +168,6 @@ export default function Begin() {
                   >
                     — {item.text}
                   </div>
-                  {item.sub && (
-                    <div
-                      style={{
-                        fontFamily: serif,
-                        fontWeight: 300,
-                        fontStyle: 'italic',
-                        fontSize: '15px',
-                        color: 'rgba(26,26,24,0.4)',
-                        lineHeight: 1.7,
-                        marginTop: '4px',
-                        marginLeft: '16px',
-                        marginBottom: '4px',
-                      }}
-                    >
-                      {item.sub}
-                    </div>
-                  )}
                 </div>
               ))}
             </div>

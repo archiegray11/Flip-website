@@ -313,8 +313,6 @@ body {
     padding: 0 24px !important;
   }
   .about-text-col { order: 1 !important; max-width: 100% !important; }
-  .about-photo-col { order: 2 !important; margin-top: 32px !important; }
-  .about-photo-img { aspect-ratio: 3/4 !important; }
 
   /* Stats strip */
   .stats-row { flex-direction: column !important; align-items: center !important; gap: 40px !important; }
@@ -374,20 +372,10 @@ body {
   }
   .footer-inner { max-width: 100% !important; }
 
-  /* Kit scroller panels — text first, image below */
-  .kit-panel {
-    display: flex !important;
-    flex-direction: column !important;
+  /* Kit scroller panels — centered single column */
+  .kit-panel-text {
     padding: 40px 24px !important;
-    gap: 0 !important;
-  }
-  .kit-panel-text { order: 1; }
-  .kit-panel-image {
-    order: 2 !important;
-    width: 100% !important;
-    aspect-ratio: 4/3 !important;
-    height: auto !important;
-    margin-top: 24px !important;
+    max-width: 100% !important;
   }
   .kit-scroller-area { min-height: auto !important; }
 

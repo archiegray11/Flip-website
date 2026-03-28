@@ -33,21 +33,37 @@ const problemPanels = [
   },
 ]
 
-const kitItems: { name: string; desc: string | null; subDesc?: string }[] = [
-  { name: 'Flip Phone', desc: 'Calls and texts. Nothing else.' },
+const kitItems: { name: string; desc: string; subDesc?: string }[] = [
   {
-    name: 'The Flip Book',
-    desc: 'Already written in. Yours to continue.',
-    subDesc: 'A circulating notebook that passes between every Flip customer. You are not the first. You will not be the last.',
+    name: 'The Nokia 2720',
+    desc: 'Calls, texts, and maps if you need them.',
+    subDesc: 'The iconic flip phone. Sleek, all black, and built for exactly this.',
   },
-  { name: 'Pen', desc: 'Slower. Clearer.' },
   {
-    name: 'The Camera',
-    desc: "A camera you won't check.",
-    subDesc: 'No previews. No retakes. Your photos are developed after your Flip and added to the Flip Album.',
+    name: 'Notebook and Pen',
+    desc: 'Leather cover. Ages with you.',
+    subDesc: 'The Flip Book — already written in by the person before you. Add your pages. Pass it on.',
   },
-  { name: 'Map Book', desc: 'Navigate without being navigated.' },
-  { name: 'The System', desc: null },
+  {
+    name: 'Film Camera',
+    desc: 'Shot on film. Developed by us.',
+    subDesc: 'The roll of film comes in the kit. Your photos are developed after your seven days and added to the Flip Album.',
+  },
+  {
+    name: 'The Flip Papers',
+    desc: 'Seven daily surprises. One opened each day.',
+    subDesc: 'Mini challenges, community submissions, random prompts. Do them all. Do none. Do the ones that catch you.',
+  },
+  {
+    name: 'The Flip Browser',
+    desc: 'Blocks the noise on your laptop too.',
+    subDesc: 'Connects to your browser and blocks the sites you choose for seven days. When you try to visit one, it closes like a flip phone.',
+  },
+  {
+    name: 'Alarm Clock',
+    desc: 'The phone stays out of the bedroom.',
+    subDesc: 'The single most reported change from every Flip experience. Sleep improves within two nights. Every time.',
+  },
 ]
 
 const stats = [
@@ -332,15 +348,6 @@ export default function Home() {
                   border: '1px solid rgba(26,26,24,0.1)',
                 }}
               >
-                {/* Image placeholder */}
-                <div
-                  style={{
-                    flexShrink: 0,
-                    width: '100%',
-                    height: '160px',
-                    background: 'rgba(26,26,24,0.04)',
-                  }}
-                />
                 {/* Content */}
                 <div
                   style={{
@@ -360,61 +367,30 @@ export default function Home() {
                   >
                     {item.name}
                   </div>
-                  {item.desc ? (
-                    <>
-                      <div
-                        style={{
-                          fontFamily: mono,
-                          fontSize: '10px',
-                          color: '#9A9A90',
-                          marginTop: '8px',
-                        }}
-                      >
-                        {item.desc}
-                      </div>
-                      {item.subDesc && (
-                        <div
-                          style={{
-                            fontFamily: serif,
-                            fontWeight: 300,
-                            fontStyle: 'italic',
-                            fontSize: '14px',
-                            color: '#9A9A90',
-                            marginTop: '8px',
-                            lineHeight: 1.6,
-                          }}
-                        >
-                          {item.subDesc}
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      <div
-                        style={{
-                          fontFamily: mono,
-                          fontSize: '9px',
-                          color: '#9A9A90',
-                          marginTop: '8px',
-                        }}
-                      >
-                        Alarm clock · Flip Browser · The Flip Papers · The Community
-                      </div>
-                      <div
-                        style={{
-                          fontFamily: serif,
-                          fontWeight: 300,
-                          fontStyle: 'italic',
-                          fontSize: '15px',
-                          color: '#9A9A90',
-                          lineHeight: 1.7,
-                          marginTop: '12px',
-                        }}
-                      >
-                        The things that make seven days without a phone not just possible — but worth
-                        doing.
-                      </div>
-                    </>
+                  <div
+                    style={{
+                      fontFamily: mono,
+                      fontSize: '10px',
+                      color: '#9A9A90',
+                      marginTop: '8px',
+                    }}
+                  >
+                    {item.desc}
+                  </div>
+                  {item.subDesc && (
+                    <div
+                      style={{
+                        fontFamily: serif,
+                        fontWeight: 300,
+                        fontStyle: 'italic',
+                        fontSize: '14px',
+                        color: '#9A9A90',
+                        marginTop: '8px',
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {item.subDesc}
+                    </div>
                   )}
                 </div>
               </div>

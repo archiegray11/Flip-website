@@ -7,72 +7,52 @@ const serif = 'var(--font-cormorant)'
 
 const panels = [
   {
-    number: '01 / 08',
-    name: 'Flip Phone',
-    tagline: 'Calls and texts. The way phones were meant to be.',
+    number: '01 / 06',
+    name: 'The Nokia 2720',
+    tagline: 'Calls, texts, and maps if you need them.',
     philosophy:
-      "Your smartphone isn't just a communication device. It's an infinite scroll machine disguised as one. The flip phone does what phones are supposed to do — and nothing else. You'll be surprised how little you miss.",
-    replaces: 'WhatsApp · SMS · Calls',
+      'The Nokia 2720 is not a compromise. It is the original. Sleek, all black, and built to do exactly what a phone should do — and nothing else. You will be surprised how quickly it starts to feel like enough.',
+    replaces: 'Smartphone · WhatsApp · Infinite scroll',
   },
   {
-    number: '02 / 08',
-    name: 'The Flip Book',
-    tagline: 'You are not the first person to hold this.',
+    number: '02 / 06',
+    name: 'Notebook and Pen',
+    tagline: 'Leather cover. Ages over time.',
     philosophy:
-      "This notebook has already been written in. By someone you will never meet, who did exactly what you are about to do. When your seven days are over, you return it. The next person receives it. Over time it becomes something no company could manufacture — a layered record of real human experience.\n\nYou have five to ten pages. Use them honestly. Someone will read what you write.",
-    rule: 'Do not skip ahead.',
-    replaces: 'Notes · Reminders · The feeling of writing alone',
+      'The notebook arrives already written in. Someone before you — a stranger — used their seven days and left their pages behind. You add yours. When you return the kit the notebook goes to the next person. The pen is yours to keep. Leather cover, weighted in the hand, it ages the more you use it. Both are made to last.',
+    replaces: 'Notes · Reminders · Voice memos · Screenshots of thoughts',
   },
   {
-    number: '03 / 08',
-    name: 'The Pen',
-    tagline: "A tool that doesn't ping.",
+    number: '03 / 06',
+    name: 'Film Camera',
+    tagline: 'A camera you will not check.',
     philosophy:
-      "It sounds trivial until you haven't used one in months. Writing by hand changes what you write — the pace, the intention, the physical commitment of putting something down. We include a good one deliberately.",
-    replaces: 'Typing · Dictation · Screenshots of thoughts',
+      'The film roll comes inside the kit. During your seven days you take photographs of moments you would have otherwise missed — or scrolled past without seeing. No previews. No retakes. No curation. When the kit comes back, the camera does too. We develop every roll. Your photos are added to the Flip Album — a growing physical archive revealed twice a year at our gatherings. In person. Not on a screen.',
+    replaces: 'iPhone camera · Instagram · The urge to perform',
   },
   {
-    number: '04 / 08',
-    name: 'The Camera',
-    tagline: "A camera you won't check.",
+    number: '04 / 06',
+    name: 'The Flip Papers',
+    tagline: 'One opened each day. No rules.',
     philosophy:
-      "Each kit includes a film camera. You take photos during your seven days — moments you would have otherwise missed, or scrolled past, or not noticed at all. No previews. No retakes. No curation.\n\nWhen you return the kit, the camera comes back too. We develop the film. Your photos are added to the Flip Album.",
-    extraItalic: "You won't see them straight away.",
-    extraBody:
-      "Twice a year we bring everything together. Every photo from every kit. Printed and placed into the Flip Album. That's when you see what you captured. Not on a screen. In a room. With everyone else.",
-    replaces: 'iPhone Camera · Instagram · The urge to perform',
+      'Seven things to open, one each day. Some are challenges. Some are submissions from the Flip community. Some are prompts, provocations, or small and strange things to do with your hands. There is no obligation. No homework. No wrong answer. Open them in order. That is the only rule.',
+    replaces: 'Notifications · The scroll · The endless to-do list',
   },
   {
-    number: '05 / 08',
-    name: 'Map Book',
-    tagline: 'Where you are. On paper.',
+    number: '05 / 06',
+    name: 'The Flip Browser',
+    tagline: 'For when you reach for the laptop instead.',
     philosophy:
-      "Getting slightly lost is one of the most underrated human experiences. The map book doesn't reroute when you take a wrong turn. It lets you understand where you are in relation to everything else — which is a different, better kind of navigation.",
-    replaces: 'Google Maps · Apple Maps · Citymapper',
+      'The Flip Browser is a Chrome extension that connects directly to your browser. Before your seven days begin you choose the sites you want to block — Instagram, TikTok, Reddit, whatever pulls you in. For the duration of your Flip they are gone. When you try to visit one, the page closes like a flip phone snapping shut. Because removing the phone from your pocket is only half the battle. The laptop is still there.',
+    replaces: 'Instagram · TikTok · Reddit · YouTube · The other device',
   },
   {
-    number: '06 / 08',
+    number: '06 / 06',
     name: 'Alarm Clock',
     tagline: 'The phone stays out of the bedroom.',
     philosophy:
-      "The single most impactful change most Flip users report. When you don't need your phone to wake you up, it doesn't need to come into the bedroom. Sleep improves within two nights. Every time.",
-    replaces: 'Phone alarm · Bedside scrolling',
-  },
-  {
-    number: '07 / 08',
-    name: 'Pen Pal Letter',
-    tagline: 'A stamp. An envelope. A reason.',
-    philosophy:
-      "Write to someone who matters. The act of composing a letter — physical, committed, impossible to unsend — is one of the stranger and more moving experiences the kit produces. We include the materials. You provide the words.",
-    replaces: 'iMessage · WhatsApp · Email',
-  },
-  {
-    number: '08 / 08',
-    name: 'The System',
-    tagline: 'Everything else that makes it work.',
-    philosophy:
-      "The alarm clock keeps the phone out of the bedroom. The Flip Browser keeps the laptop honest. The Flip Papers give each day something to open. The community means you're not doing it alone. None of these are the point. All of them are the point.",
-    replaces: 'Alarm clock · Flip Browser · The Flip Papers · The Community',
+      'When you do not need your phone to wake you up, it does not need to come into the bedroom. This one change — more than any other in the kit — is what people report first. Sleep improves within two nights. The morning feels different. You are not reaching for a screen before you have even opened your eyes.',
+    replaces: 'Phone alarm · Bedside scrolling · The morning scroll',
   },
 ]
 
@@ -178,17 +158,11 @@ export default function KitScroller() {
                 flexShrink: 0,
                 width: '100vw',
                 scrollSnapAlign: 'start',
-                padding: '80px 40px 80px 80px',
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                alignItems: 'center',
-                gap: '80px',
                 background: '#F5F0E8',
                 boxSizing: 'border-box',
               }}
             >
-              {/* Left column */}
-              <div className="kit-panel-text">
+              <div className="kit-panel-text" style={{ maxWidth: '680px', margin: '0 auto', padding: '80px 40px' }}>
                 <div
                   style={{
                     fontFamily: mono,
@@ -235,71 +209,11 @@ export default function KitScroller() {
                     color: '#4A4A44',
                     lineHeight: 1.8,
                     marginTop: '24px',
-                    maxWidth: '440px',
                     whiteSpace: 'pre-line',
                   }}
                 >
                   {panel.philosophy}
                 </p>
-
-                {'rule' in panel && panel.rule && (
-                  <>
-                    <div
-                      style={{
-                        borderTop: '1px solid rgba(26,26,24,0.1)',
-                        margin: '24px 0',
-                      }}
-                    />
-                    <div
-                      style={{
-                        fontFamily: mono,
-                        fontSize: '10px',
-                        color: '#1A1A18',
-                        letterSpacing: '0.15em',
-                      }}
-                    >
-                      {panel.rule}
-                    </div>
-                  </>
-                )}
-
-                {'extraItalic' in panel && panel.extraItalic && (
-                  <>
-                    <div
-                      style={{
-                        borderTop: '1px solid rgba(26,26,24,0.1)',
-                        margin: '24px 0',
-                      }}
-                    />
-                    <div
-                      style={{
-                        fontFamily: serif,
-                        fontWeight: 300,
-                        fontStyle: 'italic',
-                        fontSize: '18px',
-                        color: '#1A1A18',
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      {panel.extraItalic}
-                    </div>
-                    {'extraBody' in panel && panel.extraBody && (
-                      <p
-                        style={{
-                          fontFamily: serif,
-                          fontWeight: 300,
-                          fontSize: '16px',
-                          color: '#4A4A44',
-                          lineHeight: 1.8,
-                          marginTop: '12px',
-                          maxWidth: '440px',
-                        }}
-                      >
-                        {panel.extraBody}
-                      </p>
-                    )}
-                  </>
-                )}
 
                 <div
                   style={{
@@ -308,7 +222,7 @@ export default function KitScroller() {
                     color: '#9A9A90',
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
-                    marginTop: ('rule' in panel && panel.rule) || ('extraItalic' in panel && panel.extraItalic) ? '24px' : '32px',
+                    marginTop: '32px',
                     marginBottom: '6px',
                   }}
                 >
@@ -325,15 +239,6 @@ export default function KitScroller() {
                 </div>
               </div>
 
-              {/* Right column — image placeholder */}
-              <div
-                className="kit-panel-image"
-                style={{
-                  aspectRatio: '3 / 4',
-                  background: 'rgba(26,26,24,0.06)',
-                  border: '1px solid rgba(26,26,24,0.08)',
-                }}
-              />
             </div>
           ))}
         </div>

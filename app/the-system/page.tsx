@@ -94,7 +94,7 @@ export default function TheSystem() {
       {/* ─── THE FLIP BOOK SECTION ─── */}
       <section style={{ background: '#1A1A18', padding: '120px 40px' }}>
         <ScrollReveal>
-          <div style={{ maxWidth: '580px' }}>
+          <div style={{ maxWidth: '680px', margin: '0 auto' }}>
             {/* Label */}
             <div
               style={{
@@ -143,7 +143,6 @@ export default function TheSystem() {
                 fontWeight: 300,
                 fontSize: '18px',
                 color: 'rgba(245,240,232,0.65)',
-                maxWidth: '580px',
                 lineHeight: 1.9,
                 marginTop: '32px',
               }}
@@ -235,6 +234,7 @@ export default function TheSystem() {
         }}
       >
         <ScrollReveal>
+          <div style={{ maxWidth: '680px', margin: '0 auto' }}>
           {/* Label */}
           <div
             style={{
@@ -294,7 +294,6 @@ export default function TheSystem() {
               fontWeight: 300,
               fontSize: '18px',
               color: '#4A4A44',
-              maxWidth: '580px',
               lineHeight: 1.9,
               marginTop: '32px',
             }}
@@ -380,6 +379,7 @@ export default function TheSystem() {
             }}
           >
             You compare less. You reflect more. Time has passed.
+          </div>
           </div>
         </ScrollReveal>
       </section>
