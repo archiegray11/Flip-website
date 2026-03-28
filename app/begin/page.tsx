@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ScrollReveal from '@/components/ScrollReveal'
 import HonestBit from '@/components/HonestBit'
+import WaitlistForm from '@/components/WaitlistForm'
 
 export const metadata: Metadata = {
   title: 'Begin — Flip',
@@ -61,7 +62,7 @@ export default function Begin() {
               color: '#F5F0E8',
             }}
           >
-            One kit.
+            Coming soon.
           </div>
 
           <div
@@ -69,25 +70,15 @@ export default function Begin() {
               fontFamily: serif,
               fontWeight: 300,
               fontStyle: 'italic',
-              fontSize: '64px',
-              letterSpacing: '-0.02em',
-              lineHeight: 1.0,
-              color: '#C4572A',
-            }}
-          >
-            Seven days.
-          </div>
-
-          <div
-            style={{
-              fontFamily: serif,
-              fontWeight: 300,
               fontSize: '24px',
-              color: 'rgba(245,240,232,0.6)',
+              color: '#E8977A',
               marginTop: '16px',
+              maxWidth: '520px',
+              lineHeight: 1.5,
             }}
           >
-            Everything you need. Nothing you don&apos;t.
+            We&apos;re preparing the first kits. Join the waitlist and you&apos;ll be first to know
+            when they&apos;re ready.
           </div>
         </ScrollReveal>
       </section>
@@ -124,28 +115,17 @@ export default function Begin() {
               Seven Days
             </div>
 
-            {/* Price */}
-            <div style={{ marginTop: '16px' }}>
-              <span
-                style={{
-                  fontFamily: serif,
-                  fontWeight: 300,
-                  fontSize: '36px',
-                  color: '#1A1A18',
-                }}
-              >
-                £99
-              </span>
-            </div>
+            {/* Pricing note */}
             <div
               style={{
                 fontFamily: mono,
-                fontSize: '9px',
+                fontSize: '10px',
                 color: '#9A9A90',
-                marginTop: '4px',
+                marginTop: '16px',
+                letterSpacing: '0.05em',
               }}
             >
-              free returns within 48 hours if anything isn&apos;t right
+              Pricing revealed to waitlist members first.
             </div>
 
             {/* Description */}
@@ -198,41 +178,7 @@ export default function Begin() {
               ))}
             </div>
 
-            {/* CTA button */}
-            <button
-              className="begin-btn"
-              style={{
-                display: 'block',
-                width: '100%',
-                background: '#1A1A18',
-                color: '#F5F0E8',
-                fontFamily: mono,
-                fontSize: '11px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.12em',
-                padding: '18px',
-                border: 'none',
-                cursor: 'pointer',
-                marginTop: '48px',
-              }}
-            >
-              Begin the experiment
-            </button>
-
-            {/* Reassurance */}
-            <div
-              style={{
-                fontFamily: mono,
-                fontSize: '9px',
-                color: '#9A9A90',
-                textAlign: 'center',
-                marginTop: '16px',
-                lineHeight: 2,
-              }}
-            >
-              Ships within 2 working days. The phone comes back after your 7 days — a prepaid return
-              envelope is in every kit.
-            </div>
+            <WaitlistForm />
           </div>
         </ScrollReveal>
       </section>

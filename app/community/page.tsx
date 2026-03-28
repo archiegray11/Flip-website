@@ -606,7 +606,7 @@ export default function CommunityPage() {
             </div>
             <div style={{ marginTop: '48px' }}>
               <Link
-                href="/begin"
+                href="/#waitlist"
                 className="philosophy-cta"
                 style={{
                   display: 'inline-block',
@@ -621,7 +621,7 @@ export default function CommunityPage() {
                   textDecoration: 'none',
                 }}
               >
-                Begin your Flip
+                Join the waitlist
               </Link>
             </div>
           </div>

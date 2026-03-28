@@ -136,7 +136,7 @@ export default function Home() {
               }}
             >
               <Link
-                href="/begin"
+                href="/#waitlist"
                 className="hero-btn-primary"
                 style={{
                   display: 'inline-block',
@@ -150,7 +150,7 @@ export default function Home() {
                   textDecoration: 'none',
                 }}
               >
-                Begin the experiment
+                Join the waitlist
               </Link>
               <Link
                 href="/the-system"
@@ -649,8 +649,9 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* ─── SECTION 5: CTA ─── */}
+      {/* ─── SECTION 5: CTA / WAITLIST ─── */}
       <section
+        id="waitlist"
         style={{
           background: '#F5F0E8',
           padding: '100px 40px',
@@ -724,8 +725,8 @@ export default function Home() {
                   Ready to go
                 </div>
                 <div className="teaser-pulse-wrapper">
-                  <Link href="/begin" className="teaser-pulse-btn">
-                    Begin the experiment
+                  <Link href="/#waitlist" className="teaser-pulse-btn">
+                    Join the waitlist
                   </Link>
                 </div>
               </div>

@@ -213,8 +213,8 @@ export default function Stories() {
             Three people. Three different lives. One week without a phone.
           </p>
           <div className="teaser-pulse-wrapper" style={{ display: 'inline-block' }}>
-            <Link href="/begin" className="teaser-pulse-btn">
-              Begin your seven days
+            <Link href="/#waitlist" className="teaser-pulse-btn">
+              Join the waitlist
             </Link>
           </div>
         </ScrollReveal>

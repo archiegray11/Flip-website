@@ -450,7 +450,7 @@ export default function TheSystem() {
               Ready to begin?
             </div>
             <a
-              href="/begin"
+              href="/#waitlist"
               className="cta-btn"
               style={{
                 display: 'inline-block',
@@ -464,7 +464,7 @@ export default function TheSystem() {
                 textDecoration: 'none',
               }}
             >
-              Choose your kit
+              Join the waitlist
             </a>
           </div>
         </ScrollReveal>

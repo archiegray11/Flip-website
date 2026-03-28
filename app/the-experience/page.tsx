@@ -105,7 +105,7 @@ export default function TheExperience() {
             Ready to find your day seven?
           </div>
           <a
-            href="/begin"
+            href="/#waitlist"
             className="exp-cta-btn"
             style={{
               display: 'inline-block',
@@ -119,7 +119,7 @@ export default function TheExperience() {
               textDecoration: 'none',
             }}
           >
-            Begin the experiment
+            Join the waitlist
           </a>
         </ScrollReveal>
       </section>
